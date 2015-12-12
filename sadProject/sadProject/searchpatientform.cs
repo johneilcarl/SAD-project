@@ -47,11 +47,18 @@ namespace sadProject
             //patient referral
             DataTable dt4 = new DataTable();
             string referraldisplay = "SELECT RefferalDate, RefferalDescription FROM patient_refferal";
-
             MySqlCommand mycommand4 = new MySqlCommand(referraldisplay, myconn);
             MySqlDataAdapter da4 = new MySqlDataAdapter(mycommand4);
             da4.Fill(dt4);
             dataGridView3.DataSource = dt4;
+
+            //prescription
+            DataTable dt5 = new DataTable();
+            string prescriptiondisplay = "SELECT PrescriptionDate, PrescriptionDetails FROM prescription";
+            MySqlCommand mycommand5 = new MySqlCommand(prescriptiondisplay, myconn);
+            MySqlDataAdapter da5 = new MySqlDataAdapter(mycommand5);
+            da5.Fill(dt5);
+            dataGridView4.DataSource = dt5;
 
             //patient combobox
             DataTable dt3 = new DataTable();
@@ -76,7 +83,7 @@ namespace sadProject
             string MyConnection2 = "server=localhost;database=healthcenter;Persist Security Info = True; User Id=root; password=root";
             MySqlConnection myconn = new MySqlConnection(MyConnection2);
             DataTable dt2 = new DataTable();
-            string checkupDisplay = "SELECT CheckupID, DateOfCheckUp,Complaint,Treatment,Medication,CheckUpType,Weight,Height,BloodPressure FROM checkup";
+            string checkupDisplay = "SELECT CheckupID, DateOfCheckUp,Complaint,Treatment,Medication,CheckUpType,Weight,Height,BloodPressure FROM checkup WHERE PatientID = '" + comboBox1.SelectedValue + "'";
             MySqlCommand mycommand2 = new MySqlCommand(checkupDisplay, myconn);
             MySqlDataAdapter da2 = new MySqlDataAdapter(mycommand2);
             da2.Fill(dt2);
@@ -119,14 +126,29 @@ namespace sadProject
                     //patient referral
                     DataTable dt4 = new DataTable();
                     string referraldisplay = "SELECT RefferalDate, RefferalDescription FROM patient_refferal WHERE CheckUp_PatientID = '" + comboBox1.SelectedValue + "'";
-
                     MySqlCommand mycommand4 = new MySqlCommand(referraldisplay, myconn);
                     MySqlDataAdapter da4 = new MySqlDataAdapter(mycommand4);
                     da4.Fill(dt4);
                     dataGridView3.DataSource = dt4;
+
+                    //prescription
+                    DataTable dt5 = new DataTable();
+                    string prescriptiondisplay = "SELECT PrescriptionDate, PrescriptionDetails FROM prescription WHERE patientId = '" + comboBox1.SelectedValue + "'";
+                    MySqlCommand mycommand5 = new MySqlCommand(prescriptiondisplay, myconn);
+                    MySqlDataAdapter da5 = new MySqlDataAdapter(mycommand5);
+                    da5.Fill(dt5);
+                    dataGridView4.DataSource = dt5;
                 }
             }
-        void metroButton2_Click(object sender, EventArgs e)
+
+
+        void editPMR_Form_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //when child form is closed, this code is executed
+            refresh_gridviewdata2();
+        }
+
+        private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             editPMR_Form frm = new editPMR_Form();
             frm.FormClosed += new FormClosedEventHandler(editPMR_Form_FormClosed);
@@ -134,12 +156,26 @@ namespace sadProject
             frm.richTextBox1.Text = this.dataGridView2.CurrentRow.Cells[2].Value.ToString();
             frm.richTextBox2.Text = this.dataGridView2.CurrentRow.Cells[3].Value.ToString();
             frm.ShowDialog(this);
+
         }
 
-        void editPMR_Form_FormClosed(object sender, FormClosedEventArgs e)
+        private void dataGridView4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //when child form is closed, this code is executed
-            refresh_gridviewdata2();
+            ViewForm frm = new ViewForm();
+            frm.Pass_Name = comboBox1.Text;
+            frm.metroLabel1.Text = this.dataGridView4.CurrentRow.Cells[0].Value.ToString();
+            frm.metroLabel2.Text = this.dataGridView4.CurrentRow.Cells[1].Value.ToString();
+            frm.ShowDialog(this);
+
+        }
+
+        private void dataGridView3_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ViewForm frm = new ViewForm();
+            frm.Pass_Name = comboBox1.Text;
+            frm.metroLabel1.Text = this.dataGridView3.CurrentRow.Cells[0].Value.ToString();
+            frm.metroLabel2.Text = this.dataGridView3.CurrentRow.Cells[1].Value.ToString();
+            frm.ShowDialog(this);
         }
             
        

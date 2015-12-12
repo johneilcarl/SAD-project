@@ -185,6 +185,12 @@
     <Compile Include="updateOrientationSched.Designer.cs">
       <DependentUpon>updateOrientationSched.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForm.Designer.cs">
+      <DependentUpon>ViewForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="addNewParticipants.resx">
       <DependentUpon>addNewParticipants.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,6 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="updateOrientationSched.resx">
       <DependentUpon>updateOrientationSched.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForm.resx">
+      <DependentUpon>ViewForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

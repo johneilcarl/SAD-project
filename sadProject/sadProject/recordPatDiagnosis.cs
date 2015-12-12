@@ -201,7 +201,7 @@ namespace sadProject
         {
 
         }
-
+        //referral button
         private void metroButton2_Click(object sender, EventArgs e)
         {
             Referral_Form frm = new Referral_Form();
@@ -211,6 +211,14 @@ namespace sadProject
 
            
             
+        }
+        //prescription button
+        private void metroButton3_Click(object sender, EventArgs e)
+        {
+            createPrescription frm = new createPrescription();
+            frm.Pass_ID = patientName_combobox.SelectedValue.ToString();
+            frm.Pass_Name = patientName_combobox.Text;
+            frm.ShowDialog();
         }
     }
 }

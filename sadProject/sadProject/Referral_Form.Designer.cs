@@ -34,28 +34,31 @@
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(23, 153);
+            this.richTextBox1.Location = new System.Drawing.Point(23, 195);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(559, 195);
+            this.richTextBox1.Size = new System.Drawing.Size(559, 171);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
             // metroDateTime1
             // 
-            this.metroDateTime1.Location = new System.Drawing.Point(131, 108);
+            this.metroDateTime1.CustomFormat = "";
+            this.metroDateTime1.Location = new System.Drawing.Point(24, 136);
             this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTime1.Name = "metroDateTime1";
             this.metroDateTime1.Size = new System.Drawing.Size(200, 29);
             this.metroDateTime1.TabIndex = 1;
+            this.metroDateTime1.Value = new System.DateTime(2015, 12, 12, 23, 49, 58, 0);
             // 
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(23, 108);
+            this.metroLabel1.Location = new System.Drawing.Point(24, 114);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(102, 19);
             this.metroLabel1.TabIndex = 2;
@@ -63,7 +66,7 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(23, 354);
+            this.metroButton1.Location = new System.Drawing.Point(23, 372);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(134, 74);
             this.metroButton1.TabIndex = 3;
@@ -74,7 +77,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(24, 54);
+            this.metroLabel2.Location = new System.Drawing.Point(24, 60);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(83, 19);
             this.metroLabel2.TabIndex = 4;
@@ -89,11 +92,21 @@
             this.metroLabel3.TabIndex = 5;
             this.metroLabel3.Text = "metroLabel3";
             // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(24, 173);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(97, 19);
+            this.metroLabel4.TabIndex = 6;
+            this.metroLabel4.Text = "Referral Details";
+            // 
             // Referral_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(605, 454);
+            this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroButton1);
@@ -119,6 +132,7 @@
         public MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
 
     }
 }

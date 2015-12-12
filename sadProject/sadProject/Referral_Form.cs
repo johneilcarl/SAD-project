@@ -51,7 +51,16 @@ namespace sadProject
                     + this.metroDateTime1.Value.ToString("yyyy/MM/dd") + "','"
                     + this.richTextBox1.Text +
                     "');";
-            ExecuteQuery(Query);
+            if(richTextBox1.Text == "")
+            {
+                MessageBox.Show("no text");
+            }
+            else
+            {
+                ExecuteQuery(Query);
+            }
+            
+            
 
         }
         public void openCon()

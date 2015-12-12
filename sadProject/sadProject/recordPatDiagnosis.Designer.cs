@@ -53,6 +53,7 @@
             this.CheckuptypeCB = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -386,11 +387,22 @@
             this.metroButton2.UseSelectable = true;
             this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
+            // metroButton3
+            // 
+            this.metroButton3.Location = new System.Drawing.Point(965, 449);
+            this.metroButton3.Name = "metroButton3";
+            this.metroButton3.Size = new System.Drawing.Size(149, 65);
+            this.metroButton3.TabIndex = 46;
+            this.metroButton3.Text = "Precription";
+            this.metroButton3.UseSelectable = true;
+            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
+            // 
             // recordPatDiagnosis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1250, 617);
+            this.Controls.Add(this.metroButton3);
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.CheckuptypeCB);
@@ -446,6 +458,7 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private MetroFramework.Controls.MetroButton metroButton2;
         public System.Windows.Forms.ComboBox patientName_combobox;
+        private MetroFramework.Controls.MetroButton metroButton3;
 
     }
 }

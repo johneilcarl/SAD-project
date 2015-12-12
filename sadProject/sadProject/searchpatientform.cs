@@ -28,6 +28,7 @@ namespace sadProject
             string MyConnection2 = "server=localhost;database=healthcenter;Persist Security Info = True; User Id=root; password=root";
             MySqlConnection myconn = new MySqlConnection(MyConnection2);
           
+            // patient information
             DataTable dt1 = new DataTable();
             string patientprofileDisplay = "SELECT FirstName,MiddleName,Lastname,Birthdate,Gender,LotNumber,Street,City,BarangayName FROM client";
             MySqlCommand mycommand = new MySqlCommand(patientprofileDisplay, myconn);
@@ -35,15 +36,24 @@ namespace sadProject
             da1.Fill(dt1);
             dataGridView1.DataSource = dt1;
             
-
+            //past medical records
             DataTable dt2 = new DataTable();
             string checkupDisplay = "SELECT CheckupID, DateOfCheckUp,Complaint,Treatment,Medication,CheckUpType,Weight,Height,BloodPressure FROM checkup";
-            
             MySqlCommand mycommand2 = new MySqlCommand(checkupDisplay, myconn);
             MySqlDataAdapter da2 = new MySqlDataAdapter(mycommand2);
             da2.Fill(dt2);
             dataGridView2.DataSource = dt2;
 
+            //patient referral
+            DataTable dt4 = new DataTable();
+            string referraldisplay = "SELECT RefferalDate, RefferalDescription FROM patient_refferal";
+
+            MySqlCommand mycommand4 = new MySqlCommand(referraldisplay, myconn);
+            MySqlDataAdapter da4 = new MySqlDataAdapter(mycommand4);
+            da4.Fill(dt4);
+            dataGridView3.DataSource = dt4;
+
+            //patient combobox
             DataTable dt3 = new DataTable();
             string PatientReference = "SELECT CONCAT(lastname , ', ' , firstname,' ',middlename) AS Name, PatientID FROM client";
             MySqlCommand mycommand3 = new MySqlCommand(PatientReference, myconn);
@@ -101,12 +111,19 @@ namespace sadProject
 
                     DataTable dt2 = new DataTable();
                     string checkupDisplay = "SELECT CheckupID, DateOfCheckUp,Complaint,Treatment,Medication,CheckUpType,Weight,Height,BloodPressure FROM checkup WHERE PatientID = '" + comboBox1.SelectedValue + "'";
-                    
-
                     MySqlCommand mycommand2 = new MySqlCommand(checkupDisplay, myconn);
                     MySqlDataAdapter da2 = new MySqlDataAdapter(mycommand2);
                     da2.Fill(dt2);
                     dataGridView2.DataSource = dt2;
+
+                    //patient referral
+                    DataTable dt4 = new DataTable();
+                    string referraldisplay = "SELECT RefferalDate, RefferalDescription FROM patient_refferal WHERE CheckUp_PatientID = '" + comboBox1.SelectedValue + "'";
+
+                    MySqlCommand mycommand4 = new MySqlCommand(referraldisplay, myconn);
+                    MySqlDataAdapter da4 = new MySqlDataAdapter(mycommand4);
+                    da4.Fill(dt4);
+                    dataGridView3.DataSource = dt4;
                 }
             }
         void metroButton2_Click(object sender, EventArgs e)

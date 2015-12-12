@@ -77,10 +77,5 @@ namespace sadProject
             mr.ShowDialog(this);
         }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-            createPrescription cp = new createPrescription();
-            cp.ShowDialog(this);
-        }
     }
 }

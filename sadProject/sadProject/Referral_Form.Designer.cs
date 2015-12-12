@@ -82,10 +82,13 @@
             this.metroLabel2.Size = new System.Drawing.Size(83, 19);
             this.metroLabel2.TabIndex = 4;
             this.metroLabel2.Text = "metroLabel2";
+            this.metroLabel2.Visible = false;
             // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
+            this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel3.Location = new System.Drawing.Point(24, 77);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(83, 19);
@@ -116,7 +119,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Referral_Form";
-            this.Style = MetroFramework.MetroColorStyle.Pink;
+            this.Style = MetroFramework.MetroColorStyle.Default;
             this.Text = "Referral_Form";
             this.Load += new System.EventHandler(this.Referral_Form_Load);
             this.ResumeLayout(false);

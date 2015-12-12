@@ -70,6 +70,8 @@
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ViewForm";
             this.Text = "ViewForm";
             this.Load += new System.EventHandler(this.ViewForm_Load);

@@ -16,6 +16,7 @@ namespace sadProject
 {
     public partial class recordPatDiagnosis : MetroForm
     {
+        private Referral_Form frm;
 
         string MyConnection2 = "server=localhost;database=healthcenter;Persist Security Info = True; User Id=root; password=root";
         public recordPatDiagnosis()
@@ -33,13 +34,28 @@ namespace sadProject
             DataTable dtDisPat = new DataTable();
             daDisPat.Fill(dtDisPat);
 
-            comboBox1.DataSource = dtDisPat;
-            comboBox1.DisplayMember = "Name";
-            comboBox1.ValueMember = "PatientID";
+            patientName_combobox.DataSource = dtDisPat;
+            patientName_combobox.DisplayMember = "Name";
+            patientName_combobox.ValueMember = "PatientID";
 
-            comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
+            patientName_combobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            patientName_combobox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            patientName_combobox.AutoCompleteSource = AutoCompleteSource.ListItems;
+
+                DataTable dt2 = new DataTable();
+                string PatientReference = "SELECT CONCAT(MedicineName , ', ' , UnitType) AS Medicine, idMedicineName FROM medicine_name";
+                MySqlCommand mycommand2 = new MySqlCommand(PatientReference, myconn);
+                MySqlDataAdapter da2 = new MySqlDataAdapter(mycommand2);
+                da2.Fill(dt2);
+
+                comboBox2.DataSource = dt2;
+                comboBox2.DisplayMember = "Medicine";
+                comboBox2.ValueMember = "idMedicineName";
+                comboBox2.Text = "None";
+
+                comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+                comboBox2.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                comboBox2.AutoCompleteSource = AutoCompleteSource.ListItems; 
 
 
 
@@ -65,16 +81,19 @@ namespace sadProject
 
                 string MyConnection2 = "server=localhost;database=healthcenter;Persist Security Info = True; User Id=root; password=root";
                 //This is my insert query in which i am taking input from the user through windows forms
-                string Query = "INSERT INTO checkup (Complaint, Treatment, DateOfCheckUp, PatientID, CheckUpType, Weight, Height, BloodPressure) VALUES ('"
+                string Query = "INSERT INTO checkup (Complaint, Treatment, Medication, DateOfCheckUp, PatientID, CheckUpType, Weight, Height, BloodPressure) VALUES ('"
                     + this.richTextBox1.Text + "','"
                     + this.richTextBox2.Text + "','"
+                    + this.comboBox2.Text + "','"
                     + this.metroDateTime1.Value.ToString("yyyy/MM/dd") + "','"
-                    + this.comboBox1.SelectedValue + "','"
+                    + this.patientName_combobox.SelectedValue + "','"
                     + this.CheckuptypeCB.SelectedItem + "','"
                     + this.weight.Text + "','"
                     + this.height.Text + "','"
                     + this.bloodPressure1.Text + "/" + this.bloodPressure2.Text + 
                     "');";
+
+                string QuerySaCombobox2 = "INSERT INTO checkup (Medication) VALUES ('None');";
 
                 if (richTextBox1.Text == "" || richTextBox2.Text == "")
                 {
@@ -96,19 +115,28 @@ namespace sadProject
                     MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
                     MySqlDataReader MyReader2;
                     MyConn2.Open();
-                    MyReader2 = MyCommand2.ExecuteReader();     // Here our query will be executed and data saved into the database.
-                    MessageBox.Show("SUCCESSFULLY DIAGNOSED");
-                    while (MyReader2.Read())
+    // Here our query will be executed and data saved into the database.
+
+                    if (MessageBox.Show("Are you sure you want to save?", "?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
+                        MyReader2 = MyCommand2.ExecuteReader(); 
+                        MessageBox.Show("SUCCESSFULLY DIAGNOSED");
+                        while (MyReader2.Read())
+                        {
+                        }
+                        MyConn2.Close();
+                        richTextBox1.Text = "";
+                        richTextBox2.Text = "";
+                        weight.Text = "";
+                        CheckuptypeCB.Text = "";
+                        height.Text = "";
+                        bloodPressure1.Text = "";
+                        bloodPressure2.Text = "";
                     }
-                    MyConn2.Close();
-                    richTextBox1.Text = "";
-                    richTextBox2.Text = "";
-                    weight.Text = "";
-                    CheckuptypeCB.Text = "";
-                    height.Text = "";
-                    bloodPressure1.Text = "";
-                    bloodPressure2.Text = "";
+                    else
+                    {
+
+                    }
                 }
 
 
@@ -120,11 +148,6 @@ namespace sadProject
             }
 
 
-               
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
         }
 
@@ -177,6 +200,17 @@ namespace sadProject
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            Referral_Form frm = new Referral_Form();
+            frm.Pass_ID = patientName_combobox.SelectedValue.ToString();
+            frm.Pass_Name = patientName_combobox.Text;
+            frm.ShowDialog();
+
+           
+            
         }
     }
 }

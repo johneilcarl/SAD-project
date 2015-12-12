@@ -37,7 +37,8 @@ namespace sadProject
             
 
             DataTable dt2 = new DataTable();
-            string checkupDisplay = "SELECT CheckupID, DateOfCheckUp,Complaint,Treatment,CheckUpType,Weight,Height,BloodPressure FROM checkup";
+            string checkupDisplay = "SELECT CheckupID, DateOfCheckUp,Complaint,Treatment,Medication,CheckUpType,Weight,Height,BloodPressure FROM checkup";
+            
             MySqlCommand mycommand2 = new MySqlCommand(checkupDisplay, myconn);
             MySqlDataAdapter da2 = new MySqlDataAdapter(mycommand2);
             da2.Fill(dt2);
@@ -48,6 +49,7 @@ namespace sadProject
             MySqlCommand mycommand3 = new MySqlCommand(PatientReference, myconn);
             MySqlDataAdapter da3 = new MySqlDataAdapter(mycommand3);
             da3.Fill(dt3);
+
             comboBox1.DataSource = dt3;
             comboBox1.DisplayMember = "Name";
             comboBox1.ValueMember = "PatientID";
@@ -61,15 +63,15 @@ namespace sadProject
         }
         private void refresh_gridviewdata2()
         {
-        string MyConnection2 = "server=localhost;database=healthcenter;Persist Security Info = True; User Id=root; password=root";
+            string MyConnection2 = "server=localhost;database=healthcenter;Persist Security Info = True; User Id=root; password=root";
             MySqlConnection myconn = new MySqlConnection(MyConnection2);
             DataTable dt2 = new DataTable();
-            string checkupDisplay = "SELECT CheckupID, DateOfCheckUp,Complaint,Treatment,CheckUpType,Weight,Height,BloodPressure FROM checkup";
+            string checkupDisplay = "SELECT CheckupID, DateOfCheckUp,Complaint,Treatment,Medication,CheckUpType,Weight,Height,BloodPressure FROM checkup";
             MySqlCommand mycommand2 = new MySqlCommand(checkupDisplay, myconn);
             MySqlDataAdapter da2 = new MySqlDataAdapter(mycommand2);
             da2.Fill(dt2);
             dataGridView2.DataSource = dt2;
-    }
+        }
 
         private void searchpatientform_Load(object sender, EventArgs e)
         {
@@ -98,7 +100,9 @@ namespace sadProject
                     
 
                     DataTable dt2 = new DataTable();
-                    string checkupDisplay = "SELECT CheckupID, DateOfCheckUp,Complaint,Treatment,CheckUpType,Weight,Height,BloodPressure FROM checkup WHERE PatientID = '" + comboBox1.SelectedValue + "'";
+                    string checkupDisplay = "SELECT CheckupID, DateOfCheckUp,Complaint,Treatment,Medication,CheckUpType,Weight,Height,BloodPressure FROM checkup WHERE PatientID = '" + comboBox1.SelectedValue + "'";
+                    
+
                     MySqlCommand mycommand2 = new MySqlCommand(checkupDisplay, myconn);
                     MySqlDataAdapter da2 = new MySqlDataAdapter(mycommand2);
                     da2.Fill(dt2);

@@ -105,12 +105,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
     <Compile Include="inventorySubReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +160,12 @@
     </Compile>
     <Compile Include="recordPatDiagnosis.Designer.cs">
       <DependentUpon>recordPatDiagnosis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Referral_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Referral_Form.Designer.cs">
+      <DependentUpon>Referral_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="searchMedicalSupplies.cs">
       <SubType>Form</SubType>
@@ -244,6 +244,9 @@
     </Compile>
     <EmbeddedResource Include="recordPatDiagnosis.resx">
       <DependentUpon>recordPatDiagnosis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Referral_Form.resx">
+      <DependentUpon>Referral_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="searchMedicalSupplies.resx">
       <DependentUpon>searchMedicalSupplies.cs</DependentUpon>

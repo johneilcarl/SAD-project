@@ -30,7 +30,7 @@
         {
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.patientName_combobox = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.bloodPressure2 = new MetroFramework.Controls.MetroTextBox();
@@ -50,8 +50,9 @@
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
             this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.CheckuptypeCB = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,14 +75,13 @@
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             this.richTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.richTextBox1_KeyPress);
             // 
-            // comboBox1
+            // patientName_combobox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(359, 65);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(519, 21);
-            this.comboBox1.TabIndex = 18;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.patientName_combobox.FormattingEnabled = true;
+            this.patientName_combobox.Location = new System.Drawing.Point(359, 65);
+            this.patientName_combobox.Name = "patientName_combobox";
+            this.patientName_combobox.Size = new System.Drawing.Size(519, 21);
+            this.patientName_combobox.TabIndex = 18;
             // 
             // groupBox2
             // 
@@ -312,7 +312,7 @@
             // metroLabel10
             // 
             this.metroLabel10.AutoSize = true;
-            this.metroLabel10.Location = new System.Drawing.Point(16, 104);
+            this.metroLabel10.Location = new System.Drawing.Point(177, 104);
             this.metroLabel10.Name = "metroLabel10";
             this.metroLabel10.Size = new System.Drawing.Size(70, 19);
             this.metroLabel10.TabIndex = 35;
@@ -321,7 +321,7 @@
             // metroLabel11
             // 
             this.metroLabel11.AutoSize = true;
-            this.metroLabel11.Location = new System.Drawing.Point(422, 104);
+            this.metroLabel11.Location = new System.Drawing.Point(576, 104);
             this.metroLabel11.Name = "metroLabel11";
             this.metroLabel11.Size = new System.Drawing.Size(69, 19);
             this.metroLabel11.TabIndex = 36;
@@ -330,7 +330,7 @@
             // metroLabel12
             // 
             this.metroLabel12.AutoSize = true;
-            this.metroLabel12.Location = new System.Drawing.Point(834, 104);
+            this.metroLabel12.Location = new System.Drawing.Point(965, 104);
             this.metroLabel12.Name = "metroLabel12";
             this.metroLabel12.Size = new System.Drawing.Size(74, 19);
             this.metroLabel12.TabIndex = 37;
@@ -353,16 +353,6 @@
             this.metroDateTime1.Size = new System.Drawing.Size(249, 29);
             this.metroDateTime1.TabIndex = 39;
             // 
-            // metroComboBox1
-            // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Location = new System.Drawing.Point(834, 126);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(393, 29);
-            this.metroComboBox1.TabIndex = 41;
-            this.metroComboBox1.UseSelectable = true;
-            // 
             // CheckuptypeCB
             // 
             this.CheckuptypeCB.FormattingEnabled = true;
@@ -375,13 +365,35 @@
             this.CheckuptypeCB.Size = new System.Drawing.Size(125, 21);
             this.CheckuptypeCB.TabIndex = 43;
             // 
+            // comboBox2
+            // 
+            this.comboBox2.DisplayMember = "None";
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "None"});
+            this.comboBox2.Location = new System.Drawing.Point(895, 126);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(219, 21);
+            this.comboBox2.TabIndex = 44;
+            // 
+            // metroButton2
+            // 
+            this.metroButton2.Location = new System.Drawing.Point(965, 350);
+            this.metroButton2.Name = "metroButton2";
+            this.metroButton2.Size = new System.Drawing.Size(149, 65);
+            this.metroButton2.TabIndex = 45;
+            this.metroButton2.Text = "Referral";
+            this.metroButton2.UseSelectable = true;
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
+            // 
             // recordPatDiagnosis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1250, 617);
+            this.Controls.Add(this.metroButton2);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.CheckuptypeCB);
-            this.Controls.Add(this.metroComboBox1);
             this.Controls.Add(this.metroDateTime1);
             this.Controls.Add(this.metroLabel13);
             this.Controls.Add(this.metroLabel12);
@@ -393,7 +405,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.patientName_combobox);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "recordPatDiagnosis";
@@ -411,7 +423,6 @@
 
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel3;
@@ -427,12 +438,14 @@
         private MetroFramework.Controls.MetroLabel metroLabel12;
         private MetroFramework.Controls.MetroLabel metroLabel13;
         private MetroFramework.Controls.MetroDateTime metroDateTime1;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private MetroFramework.Controls.MetroTextBox bloodPressure2;
         private System.Windows.Forms.ComboBox CheckuptypeCB;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private MetroFramework.Controls.MetroButton metroButton2;
+        public System.Windows.Forms.ComboBox patientName_combobox;
 
     }
 }

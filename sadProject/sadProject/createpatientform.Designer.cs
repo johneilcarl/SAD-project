@@ -267,8 +267,8 @@
             this.birthDT.AllowDrop = true;
             this.birthDT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.birthDT.Location = new System.Drawing.Point(157, 252);
-            this.birthDT.MaxDate = new System.DateTime(2015, 12, 5, 0, 0, 0, 0);
-            this.birthDT.MinDate = new System.DateTime(1919, 1, 30, 0, 0, 0, 0);
+            this.birthDT.MaxDate = new System.DateTime(9998, 12, 5, 0, 0, 0, 0);
+            this.birthDT.MinDate = new System.DateTime(1900, 1, 30, 0, 0, 0, 0);
             this.birthDT.MinimumSize = new System.Drawing.Size(0, 29);
             this.birthDT.Name = "birthDT";
             this.birthDT.Size = new System.Drawing.Size(200, 29);

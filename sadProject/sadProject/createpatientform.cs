@@ -62,20 +62,25 @@ namespace sadProject
                     MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
                     MySqlDataReader MyReader2;
                     MyConn2.Open();
-                    MyReader2 = MyCommand2.ExecuteReader();     // Here our query will be executed and data saved into the database.
-                    MessageBox.Show("Successfully Added new Patient Profile!");
-                    while (MyReader2.Read())
+                         // Here our query will be executed and data saved into the database.
+                    if (MessageBox.Show("Are you sure you want to save?", "?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
+                        MyReader2 = MyCommand2.ExecuteReader();
+                        MessageBox.Show("Successfully created new patient profile!");
+
+                        while (MyReader2.Read())
+                        {
+                        }
+                        MyConn2.Close();
+                        fNameTB.Text = "";
+                        mNameTB.Text = "";
+                        lNameTB.Text = "";
+                        birthDT.Value.ToString("");
+                        lotNumberTB.Text = "";
+                        streetTB.Text = "";
+                        cityTB.Text = "";
+                        barangayNameTB.Text = "";
                     }
-                    MyConn2.Close();
-                    fNameTB.Text = "";
-                    mNameTB.Text = "";
-                    lNameTB.Text = "";
-                    birthDT.Value.ToString("");
-                    lotNumberTB.Text = "";
-                    streetTB.Text = "";
-                    cityTB.Text = "";
-                    barangayNameTB.Text = "";
                 }
                 
 

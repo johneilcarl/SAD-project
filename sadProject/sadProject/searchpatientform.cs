@@ -35,7 +35,15 @@ namespace sadProject
             MySqlDataAdapter da1 = new MySqlDataAdapter(mycommand);
             da1.Fill(dt1);
             dataGridView1.DataSource = dt1;
-            
+
+            dataGridView2.Columns.Clear();
+            dataGridView2.Refresh();
+            dataGridView3.Columns.Clear();
+            dataGridView3.Refresh();
+            dataGridView4.Columns.Clear();
+            dataGridView4.Refresh();
+
+            /*
             //past medical records
             DataTable dt2 = new DataTable();
             string checkupDisplay = "SELECT CheckupID, DateOfCheckUp,Complaint,Treatment,Medication,CheckUpType,Weight,Height,BloodPressure FROM checkup";
@@ -59,6 +67,7 @@ namespace sadProject
             MySqlDataAdapter da5 = new MySqlDataAdapter(mycommand5);
             da5.Fill(dt5);
             dataGridView4.DataSource = dt5;
+            */
 
             //patient combobox
             DataTable dt3 = new DataTable();
@@ -115,7 +124,7 @@ namespace sadProject
                     da1.Fill(dt1);
                     dataGridView1.DataSource = dt1;
                     
-
+                    
                     DataTable dt2 = new DataTable();
                     string checkupDisplay = "SELECT CheckupID, DateOfCheckUp,Complaint,Treatment,Medication,CheckUpType,Weight,Height,BloodPressure FROM checkup WHERE PatientID = '" + comboBox1.SelectedValue + "'";
                     MySqlCommand mycommand2 = new MySqlCommand(checkupDisplay, myconn);

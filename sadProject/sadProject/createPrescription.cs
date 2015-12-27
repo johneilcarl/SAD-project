@@ -55,6 +55,12 @@ namespace sadProject
                     + this.richTextBox1.Text +
                     "');";
 
+            string Query2 = "INSERT INTO patient_refferal (CheckUp_PatientID, RefferalDate, RefferalDescription) VALUES ('"
+                    + this.metroLabel4.Text + "','"
+                    + this.metroDateTime1.Value.ToString("yyyy/MM/dd") + "','"
+                    + this.richTextBox1.Text +
+                    "');";
+
             if (richTextBox1.Text == "")
             {
                 MessageBox.Show("no text");
@@ -62,6 +68,7 @@ namespace sadProject
             else
             {
                 ExecuteQuery(Query);
+                ExecuteQuery(Query2);
             }
         }
 

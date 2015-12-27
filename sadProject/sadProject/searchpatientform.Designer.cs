@@ -152,9 +152,9 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.dataGridView4);
-            this.groupBox4.Location = new System.Drawing.Point(891, 63);
+            this.groupBox4.Location = new System.Drawing.Point(885, 63);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(311, 258);
+            this.groupBox4.Size = new System.Drawing.Size(317, 258);
             this.groupBox4.TabIndex = 19;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "PRESCRIPTION";
@@ -168,7 +168,7 @@
             this.dataGridView4.MultiSelect = false;
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.ReadOnly = true;
-            this.dataGridView4.Size = new System.Drawing.Size(299, 236);
+            this.dataGridView4.Size = new System.Drawing.Size(308, 236);
             this.dataGridView4.TabIndex = 0;
             this.dataGridView4.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellDoubleClick);
             // 

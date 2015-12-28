@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace sadProject
 {
-    public partial class PMSboxes : Form
+    public partial class PMSboxes : MetroForm
     {
         private static PMSboxes _instance;
         public PMSboxes()
@@ -43,10 +44,6 @@ namespace sadProject
             spf.ShowDialog(this);
         }
 
-        private void PMSboxes_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void PMSboxes_closed(object sender, FormClosedEventArgs e)
         {
@@ -75,6 +72,21 @@ namespace sadProject
         {
             monthlyReport mr = new monthlyReport();
             mr.ShowDialog(this);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PMSboxes_Load(object sender, EventArgs e)
+        {
+
         }
 
     }

@@ -58,7 +58,7 @@
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel3.Location = new System.Drawing.Point(23, 98);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(106, 25);
+            this.metroLabel3.Size = new System.Drawing.Size(111, 25);
             this.metroLabel3.TabIndex = 2;
             this.metroLabel3.Text = "metroLabel3";
             // 
@@ -73,6 +73,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ViewForm";
+            this.ShowInTaskbar = false;
             this.Text = "ViewForm";
             this.Load += new System.EventHandler(this.ViewForm_Load);
             this.ResumeLayout(false);

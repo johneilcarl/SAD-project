@@ -273,7 +273,7 @@
             this.birthDT.Name = "birthDT";
             this.birthDT.Size = new System.Drawing.Size(200, 29);
             this.birthDT.TabIndex = 36;
-            this.birthDT.Value = new System.DateTime(2015, 12, 5, 0, 0, 0, 0);
+            this.birthDT.Value = new System.DateTime(2015, 12, 28, 22, 14, 4, 0);
             // 
             // genderCB
             // 
@@ -410,6 +410,7 @@
             this.MinimizeBox = false;
             this.Name = "createpatientform";
             this.Resizable = false;
+            this.ShowInTaskbar = false;
             this.Style = MetroFramework.MetroColorStyle.Pink;
             this.Text = "Create Patient Profile";
             this.Load += new System.EventHandler(this.createpatientform_Load);

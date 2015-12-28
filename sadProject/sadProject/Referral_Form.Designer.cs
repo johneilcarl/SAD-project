@@ -91,7 +91,7 @@
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel3.Location = new System.Drawing.Point(24, 77);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(83, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(111, 25);
             this.metroLabel3.TabIndex = 5;
             this.metroLabel3.Text = "metroLabel3";
             // 
@@ -119,6 +119,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Referral_Form";
+            this.ShowInTaskbar = false;
             this.Style = MetroFramework.MetroColorStyle.Default;
             this.Text = "Referral_Form";
             this.Load += new System.EventHandler(this.Referral_Form_Load);

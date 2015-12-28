@@ -127,6 +127,7 @@
             this.MinimizeBox = false;
             this.Name = "editPMR_Form";
             this.Resizable = false;
+            this.ShowInTaskbar = false;
             this.Text = "Past Medical Records";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace sadProject
 {
-    public partial class InventorySubsystem : Form
+    public partial class InventorySubsystem : MetroForm
     {
         public InventorySubsystem()
         {
@@ -33,6 +34,11 @@ namespace sadProject
         {
             inventorySubReport isr = new inventorySubReport();
             isr.ShowDialog(this);
+        }
+
+        private void InventorySubsystem_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

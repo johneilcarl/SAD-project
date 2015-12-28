@@ -21,11 +21,11 @@ namespace sadProject
             InitializeComponent();
         }
 
-       
 
+        string MyConnection2 = "server=localhost;database=healthcenter;Persist Security Info = True; User Id=root; password=root";
         private void loadData()
         {
-            string MyConnection2 = "server=localhost;database=healthcenter;Persist Security Info = True; User Id=root; password=root";
+            
             MySqlConnection myconn = new MySqlConnection(MyConnection2);
           
             // patient information
@@ -115,8 +115,9 @@ namespace sadProject
        
                 else
                 {
-                    string MyConnection2 = "server=localhost;database=healthcenter;Persist Security Info = True; User Id=root; password=root";
+                   
                     MySqlConnection myconn = new MySqlConnection(MyConnection2);
+
                     DataTable dt1 = new DataTable();
                     string displaySearchPatient = "SELECT FirstName,MiddleName,Lastname,Birthdate,Gender,LotNumber,Street,City,BarangayName FROM client WHERE PatientID = '" + comboBox1.SelectedValue + "'";// OR FirstName LIKE '%" + comboBox1.SelectedValue + "%' OR MiddleName LIKE '%" + comboBox1.SelectedValue + "%' OR LastName LIKE '%" + comboBox1.SelectedValue + "%' OR BarangayName LIKE '%" + comboBox1.SelectedValue + "%' ;";
                     MySqlCommand mycommand = new MySqlCommand(displaySearchPatient, myconn);
@@ -124,7 +125,7 @@ namespace sadProject
                     da1.Fill(dt1);
                     dataGridView1.DataSource = dt1;
                     
-                    
+                    //patient profile
                     DataTable dt2 = new DataTable();
                     string checkupDisplay = "SELECT CheckupID, DateOfCheckUp,Complaint,Treatment,Medication,CheckUpType,Weight,Height,BloodPressure FROM checkup WHERE PatientID = '" + comboBox1.SelectedValue + "'";
                     MySqlCommand mycommand2 = new MySqlCommand(checkupDisplay, myconn);

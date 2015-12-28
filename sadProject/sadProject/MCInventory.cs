@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace sadProject
 {
-    public partial class MCInventory : Form
+    public partial class MCInventory : MetroForm
     {
         public MCInventory()
         {
@@ -33,6 +34,11 @@ namespace sadProject
         {
             mothersClassReport mcr = new mothersClassReport();
             mcr.ShowDialog(this);
+        }
+
+        private void MCInventory_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

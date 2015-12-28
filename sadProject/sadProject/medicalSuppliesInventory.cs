@@ -45,13 +45,19 @@ namespace sadProject
 
             comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems; 
+            comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
+
 
         }
 
         private void medicalSuppliesInventory_Load(object sender, EventArgs e)
         {
             loadData();
+        }
+
+        private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -78,7 +78,7 @@
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel3.Location = new System.Drawing.Point(24, 94);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(83, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(111, 25);
             this.metroLabel3.TabIndex = 6;
             this.metroLabel3.Text = "metroLabel3";
             // 
@@ -117,6 +117,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "createPrescription";
+            this.ShowInTaskbar = false;
             this.Text = "createPrescription";
             this.Load += new System.EventHandler(this.createPrescription_Load);
             this.ResumeLayout(false);

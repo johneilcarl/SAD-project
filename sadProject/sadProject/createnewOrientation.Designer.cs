@@ -199,6 +199,7 @@
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "createnewOrientation";
+            this.ShowInTaskbar = false;
             this.Text = "createnewOrientation";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

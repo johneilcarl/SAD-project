@@ -182,6 +182,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "medicalSuppliesInventory";
+            this.ShowInTaskbar = false;
             this.Style = MetroFramework.MetroColorStyle.Pink;
             this.Text = "medicalSuppliesInventory";
             this.Load += new System.EventHandler(this.medicalSuppliesInventory_Load);

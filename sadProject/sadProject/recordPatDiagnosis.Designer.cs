@@ -52,15 +52,13 @@
             this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
             this.CheckuptypeCB = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
-            this.metroButton3 = new MetroFramework.Controls.MetroButton();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.metroDateTime2 = new MetroFramework.Controls.MetroDateTime();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
-            this.metroDateTime3 = new MetroFramework.Controls.MetroDateTime();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroDateTime3 = new MetroFramework.Controls.MetroDateTime();
+            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
+            this.metroDateTime2 = new MetroFramework.Controls.MetroDateTime();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -385,26 +383,6 @@
             this.comboBox2.Size = new System.Drawing.Size(219, 21);
             this.comboBox2.TabIndex = 44;
             // 
-            // metroButton2
-            // 
-            this.metroButton2.Location = new System.Drawing.Point(895, 36);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(149, 65);
-            this.metroButton2.TabIndex = 45;
-            this.metroButton2.Text = "Referral";
-            this.metroButton2.UseSelectable = true;
-            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
-            // 
-            // metroButton3
-            // 
-            this.metroButton3.Location = new System.Drawing.Point(1063, 36);
-            this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(149, 65);
-            this.metroButton3.TabIndex = 46;
-            this.metroButton3.Text = "Precription";
-            this.metroButton3.UseSelectable = true;
-            this.metroButton3.Click += new System.EventHandler(this.metroButton3_Click);
-            // 
             // richTextBox3
             // 
             this.richTextBox3.Location = new System.Drawing.Point(6, 92);
@@ -429,29 +407,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "OPTIONAL";
             // 
-            // metroDateTime2
+            // metroLabel5
             // 
-            this.metroDateTime2.Location = new System.Drawing.Point(383, 33);
-            this.metroDateTime2.MinimumSize = new System.Drawing.Size(0, 29);
-            this.metroDateTime2.Name = "metroDateTime2";
-            this.metroDateTime2.Size = new System.Drawing.Size(236, 29);
-            this.metroDateTime2.TabIndex = 48;
-            // 
-            // richTextBox4
-            // 
-            this.richTextBox4.Location = new System.Drawing.Point(383, 92);
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(371, 198);
-            this.richTextBox4.TabIndex = 49;
-            this.richTextBox4.Text = "";
-            // 
-            // metroDateTime3
-            // 
-            this.metroDateTime3.Location = new System.Drawing.Point(6, 33);
-            this.metroDateTime3.MinimumSize = new System.Drawing.Size(0, 29);
-            this.metroDateTime3.Name = "metroDateTime3";
-            this.metroDateTime3.Size = new System.Drawing.Size(235, 29);
-            this.metroDateTime3.TabIndex = 50;
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(383, 70);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(78, 19);
+            this.metroLabel5.TabIndex = 52;
+            this.metroLabel5.Text = "Prescription";
             // 
             // metroLabel1
             // 
@@ -462,14 +425,29 @@
             this.metroLabel1.TabIndex = 51;
             this.metroLabel1.Text = "Referral";
             // 
-            // metroLabel5
+            // metroDateTime3
             // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(383, 70);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(78, 19);
-            this.metroLabel5.TabIndex = 52;
-            this.metroLabel5.Text = "Prescription";
+            this.metroDateTime3.Location = new System.Drawing.Point(6, 33);
+            this.metroDateTime3.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTime3.Name = "metroDateTime3";
+            this.metroDateTime3.Size = new System.Drawing.Size(235, 29);
+            this.metroDateTime3.TabIndex = 50;
+            // 
+            // richTextBox4
+            // 
+            this.richTextBox4.Location = new System.Drawing.Point(383, 92);
+            this.richTextBox4.Name = "richTextBox4";
+            this.richTextBox4.Size = new System.Drawing.Size(371, 198);
+            this.richTextBox4.TabIndex = 49;
+            this.richTextBox4.Text = "";
+            // 
+            // metroDateTime2
+            // 
+            this.metroDateTime2.Location = new System.Drawing.Point(383, 33);
+            this.metroDateTime2.MinimumSize = new System.Drawing.Size(4, 29);
+            this.metroDateTime2.Name = "metroDateTime2";
+            this.metroDateTime2.Size = new System.Drawing.Size(236, 29);
+            this.metroDateTime2.TabIndex = 48;
             // 
             // recordPatDiagnosis
             // 
@@ -477,8 +455,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1250, 617);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.metroButton3);
-            this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.CheckuptypeCB);
             this.Controls.Add(this.metroDateTime1);
@@ -496,6 +472,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "recordPatDiagnosis";
+            this.ShowInTaskbar = false;
             this.Style = MetroFramework.MetroColorStyle.Pink;
             this.Text = "Record Patient Diagnosis";
             this.Load += new System.EventHandler(this.recordPatDiagnosis_Load);
@@ -533,9 +510,7 @@
         private MetroFramework.Controls.MetroTextBox bloodPressure2;
         private System.Windows.Forms.ComboBox CheckuptypeCB;
         private System.Windows.Forms.ComboBox comboBox2;
-        private MetroFramework.Controls.MetroButton metroButton2;
         public System.Windows.Forms.ComboBox patientName_combobox;
-        private MetroFramework.Controls.MetroButton metroButton3;
         private System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.GroupBox groupBox1;
         private MetroFramework.Controls.MetroLabel metroLabel5;

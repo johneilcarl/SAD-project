@@ -208,6 +208,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "addNewParticipants";
+            this.ShowInTaskbar = false;
             this.Text = "addNewParticipants";
             this.ResumeLayout(false);
             this.PerformLayout();

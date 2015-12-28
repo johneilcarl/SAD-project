@@ -16,20 +16,20 @@ namespace sadProject
 {
     public partial class createpatientform : MetroForm
     {
-        private static createpatientform _instance;
         public createpatientform()
         {
             InitializeComponent();
         }
-    
+
+        string MyConnection2 = "server=localhost;database=healthcenter;Persist Security Info = True; User Id=root; password=root";
+
         private void metroButton1_Click(object sender, EventArgs e)
         {
 
             try
             {
-                
-                string MyConnection2 = "server=localhost;database=healthcenter;Persist Security Info = True; User Id=root; password=root";
-                //This is my insert query in which i am taking input from the user through windows forms
+                MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
+
                 string Query = "INSERT INTO client (FirstName, MiddleName, LastName, Birthdate, Gender, LotNumber, Street, City, BarangayName) VALUES ('"
                     + this.fNameTB.Text + "','"
                     + this.mNameTB.Text + "','"
@@ -43,9 +43,9 @@ namespace sadProject
                     "');";
 
                 if (fNameTB.Text == "" || mNameTB.Text == "" || lNameTB.Text == "" )
-              {
+                {
                   MessageBox.Show("Full Name is not complete, Please complete");
-              }
+                }
                 else if (lotNumberTB.Text == "" || streetTB.Text == "" || cityTB.Text == "" || barangayNameTB.Text == "")
                 {
                     MessageBox.Show("No lot number OR street OR city OR barangay name inputted");
@@ -56,21 +56,17 @@ namespace sadProject
                 }
                 else
                 {
-                    //This is  MySqlConnection here i have created the object and pass my connection string.
-                    MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
-                    //This is command class which will handle the query and connection object.
+
+                    
                     MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
-                    MySqlDataReader MyReader2;
+
                     MyConn2.Open();
-                         // Here our query will be executed and data saved into the database.
                     if (MessageBox.Show("Are you sure you want to save?", "?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        MyReader2 = MyCommand2.ExecuteReader();
+                        MyCommand2.ExecuteReader();
                         MessageBox.Show("Successfully created new patient profile!");
 
-                        while (MyReader2.Read())
-                        {
-                        }
+                       
                         MyConn2.Close();
                         fNameTB.Text = "";
                         mNameTB.Text = "";
@@ -107,7 +103,7 @@ namespace sadProject
 
         private void createpatientform_Load(object sender, EventArgs e)
         {
-
+            birthDT.MaxDate = DateTime.Now;
         }
 
         private void genderBox_SelectedIndexChanged(object sender, EventArgs e)

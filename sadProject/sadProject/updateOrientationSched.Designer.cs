@@ -138,6 +138,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker1);
             this.Name = "updateOrientationSched";
+            this.ShowInTaskbar = false;
             this.Text = "updateOrientationSched";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

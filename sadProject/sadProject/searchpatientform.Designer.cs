@@ -187,6 +187,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "searchpatientform";
+            this.ShowInTaskbar = false;
             this.Style = MetroFramework.MetroColorStyle.Pink;
             this.Text = "Search Patient Profile";
             this.Load += new System.EventHandler(this.searchpatientform_Load);

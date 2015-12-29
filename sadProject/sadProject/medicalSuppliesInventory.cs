@@ -27,7 +27,7 @@ namespace sadProject
             MySqlConnection myconn = new MySqlConnection(MyConnection2);
 
             DataTable dt1 = new DataTable();
-            string medicineDisplay = "SELECT MedicineName, UnitType FROM medicine_name";
+            string medicineDisplay = "SELECT r.Medical_Supplies_Inventory_SupplyID as Supply, m.MedicineName, SUM(quantity) as totalQuantity FROM receiving_line r, medicine_name m WHERE m.idMedicineName = r.Medical_Supplies_Inventory_SupplyID GROUP BY Medical_Supplies_Inventory_SupplyID;";
             MySqlCommand mycommand = new MySqlCommand(medicineDisplay, myconn);
             MySqlDataAdapter da1 = new MySqlDataAdapter(mycommand);
             da1.Fill(dt1);

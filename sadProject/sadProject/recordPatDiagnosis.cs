@@ -122,30 +122,26 @@ namespace sadProject
                     //checkup
                     MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
                     MySqlCommand MyCommand2 = new MySqlCommand(checkupQuery, MyConn2);
-                    MySqlDataReader MyReader2;
                     MyConn2.Open();
+
                     //precription
                     MySqlConnection MyConn3 = new MySqlConnection(MyConnection2);
                     MySqlCommand prescriptionCommand = new MySqlCommand(precriptionQuery, MyConn3);
-                    MySqlDataReader MyReader3;
                     MyConn3.Open();
                     //referral
                     MySqlConnection MyConn4 = new MySqlConnection(MyConnection2);
                     MySqlCommand referralCommand = new MySqlCommand(referralQuery, MyConn4);
-                    MySqlDataReader MyReader4;
                     MyConn4.Open();
 
     // Here our query will be executed and data saved into the database.
 
                     if (MessageBox.Show("Are you sure you want to save?", "?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        MyReader2 = MyCommand2.ExecuteReader();
-                        MyReader3 = prescriptionCommand.ExecuteReader();
-                        MyReader4 = referralCommand.ExecuteReader(); 
+                        MyCommand2.ExecuteReader();
+                        prescriptionCommand.ExecuteReader();
+                        referralCommand.ExecuteReader(); 
                         MessageBox.Show("SUCCESSFULLY DIAGNOSED");
-                        while (MyReader2.Read())
-                        {
-                        }
+
                         MyConn2.Close();
                         richTextBox1.Text = "";
                         richTextBox2.Text = "";

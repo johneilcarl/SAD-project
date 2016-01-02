@@ -27,21 +27,21 @@ namespace sadProject
             MySqlConnection myconn = new MySqlConnection(MyConnection2);
 
             DataTable dt1 = new DataTable();
-            string medicineDisplay = "SELECT r.Medical_Supplies_Inventory_SupplyID as Supply, m.MedicineName, SUM(quantity) as totalQuantity FROM receiving_line r, medicine_name m WHERE m.idMedicineName = r.Medical_Supplies_Inventory_SupplyID GROUP BY Medical_Supplies_Inventory_SupplyID;";
+            string medicineDisplay = "SELECT * FROM medicine_name mn LEFT JOIN medical_supplies_inventory msi ON msi.idMedicineName = mn.idMedicineName WHERE msi.idMedicineName = mn.idMedicineName;";
             MySqlCommand mycommand = new MySqlCommand(medicineDisplay, myconn);
             MySqlDataAdapter da1 = new MySqlDataAdapter(mycommand);
             da1.Fill(dt1);
             dataGridView1.DataSource = dt1;
 
             DataTable dt2 = new DataTable();
-            string PatientReference = "SELECT CONCAT(MedicineName , ', ' , UnitType) AS Medicine, idMedicineName FROM medicine_name";
+            string PatientReference = "SELECT CONCAT(mn.MedicineName , ', ' , mn.UnitType) AS Medicine, mn.idMedicineName FROM medicine_name mn LEFT JOIN medical_supplies_inventory msi ON msi.idMedicineName = mn.idMedicineName WHERE msi.idMedicineName = mn.idMedicineName;";
             MySqlCommand mycommand2 = new MySqlCommand(PatientReference, myconn);
             MySqlDataAdapter da2 = new MySqlDataAdapter(mycommand2);
             da2.Fill(dt2);
 
             comboBox1.DataSource = dt2;
             comboBox1.DisplayMember = "Medicine";
-            comboBox1.ValueMember = "idMedicineName";
+            comboBox1.ValueMember = "mn.idMedicineName";
 
             comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
@@ -57,6 +57,46 @@ namespace sadProject
 
         private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            string myConnection = "server=localhost;database=healthcenter;Persist Security Info = True; User Id=root; password=root";
+
+            try
+            {
+
+                string medical_supplies = "INSERT INTO medical_supplies_inventory (idMedicineName) VALUES ('"
+                       + this.metroTextBox3.Text +
+                       "');";
+
+                string medicine_name = "INSERT INTO medicine_name (idMedicineName, MedicineName, UnitType) VALUES ('"
+                        + this.metroTextBox3.Text + "','"
+                        + this.metroTextBox1.Text + "','"
+                        + this.metroTextBox2.Text +
+                        "');";
+
+                MySqlConnection myConn = new MySqlConnection(myConnection);
+                MySqlCommand supCom = new MySqlCommand(medical_supplies, myConn);
+                myConn.Open();
+
+                MySqlConnection myConn2 = new MySqlConnection(myConnection);
+                MySqlCommand mednameCom = new MySqlCommand(medicine_name, myConn2);
+                myConn2.Open();
+
+                supCom.ExecuteReader();
+                mednameCom.ExecuteReader();
+                MessageBox.Show("SUCCESSFULLY ADD");
+                loadData();
+                myConn.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
     }

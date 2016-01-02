@@ -26,21 +26,22 @@ namespace sadProject
             MySqlConnection myconn = new MySqlConnection(MyConnection2);
 
             DataTable dt1 = new DataTable();
-            string PatientReference = "SELECT CONCAT(MedicineName , ', ' , UnitType) AS Medicine, idMedicineName FROM medicine_name";
+            string PatientReference = "SELECT CONCAT(mn.MedicineName , ', ' , mn.UnitType) AS Medicine, SupplyID FROM medicine_name mn LEFT JOIN medical_supplies_inventory msi ON msi.idMedicineName = mn.idMedicineName WHERE msi.idMedicineName = mn.idMedicineName;";
             MySqlCommand medCom = new MySqlCommand(PatientReference, myconn);
             MySqlDataAdapter da2 = new MySqlDataAdapter(medCom);
             da2.Fill(dt1);
 
-            comboBox1.DataSource = dt1;
-            comboBox1.DisplayMember = "Medicine";
-            comboBox1.ValueMember = "idMedicineName";
+            medicineName.DataSource = dt1;
+            medicineName.DisplayMember = "Medicine";
+            medicineName.ValueMember = "SupplyID";
 
-            comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
+            medicineName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            medicineName.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            medicineName.AutoCompleteSource = AutoCompleteSource.ListItems;
 
             DataTable dispensetb = new DataTable();
-            string dispenseDisplay = "SELECT * from issuance_line";
+            //string dispenseDisplay = "SELECT i.DateOfIssuance as Date_of_Issuance, CONCAT(mn.MedicineName, ',' ,mn.UnitType) as Medicine,  SUM(il.Quantity) as Quantity FROM issuance i LEFT JOIN issuance_line il ON i.IssuanceID = il.IssuanceID LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = il.SupplyID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY il.SupplyID;";
+            string dispenseDisplay = "SELECT i.DateOfIssuance as Date_of_Issuance, CONCAT(mn.MedicineName, ',' ,mn.UnitType) as Medicine, il.Quantity as Quantity FROM issuance i LEFT JOIN issuance_line il ON i.IssuanceID = il.IssuanceID LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = il.SupplyID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY i.IssuanceID;";
             MySqlCommand disCom = new MySqlCommand(dispenseDisplay, myconn);
             MySqlDataAdapter da5 = new MySqlDataAdapter(disCom);
             da5.Fill(dispensetb);
@@ -63,9 +64,9 @@ namespace sadProject
                        + this.issuanceDate.Value.ToString("yyyy/MM/dd") +
                        "');";
 
-                string issuance_line = "INSERT INTO issuance_line (Medical_Supplies_Inventory_SupplyID, Quantity) VALUES ('"
-                        + this.comboBox1.SelectedValue + "','"
-                        + this.comboBox2.SelectedItem + 
+                string issuance_line = "INSERT INTO issuance_line (IssuanceID, SupplyID, Quantity) VALUES ((SELECT IssuanceID FROM issuance ORDER BY IssuanceID desc limit 1),'"
+                        + this.medicineName.SelectedValue + "','"
+                        + this.quantity.SelectedItem + 
                         "');";
 
                 MySqlConnection myConn = new MySqlConnection(myConnection);

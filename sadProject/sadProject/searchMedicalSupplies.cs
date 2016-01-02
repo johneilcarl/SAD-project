@@ -26,14 +26,15 @@ namespace sadProject
             MySqlConnection myconn = new MySqlConnection(MyConnection2);
 
             DataTable receiveTable = new DataTable();
-            string receiveDisplay = "SELECT * from receiving_line";
+            //string receiveDisplay = "SELECT rr.DateOfReceive as Date_of_Receive, CONCAT(ms.LastName, ',' ,ms.StaffType) AS Staff, CONCAT(mn.MedicineName, ',' ,mn.UnitType) AS Medicine, rl.Quantity as Quantity, rl.ExpirationDate as Expiration_Date FROM receiving_report rr LEFT JOIN receiving_line rl ON rl.idReceivingReport = rr.idReceivingReport LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = rl.SupplyID LEFT JOIN medical_staff ms ON ms.StaffID = rr.StaffID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY rr.idReceivingReport;";
+            string receiveDisplay = "SELECT rr.DateOfReceive as Date_of_Receive, CONCAT(ms.LastName, ',' ,ms.StaffType) AS Staff, CONCAT(mn.MedicineName, ',' ,mn.UnitType) AS Medicine, SUM(rl.Quantity) as Quantity, rl.ExpirationDate as Expiration_Date FROM receiving_report rr LEFT JOIN receiving_line rl ON rl.idReceivingReport = rr.idReceivingReport LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = rl.SupplyID LEFT JOIN medical_staff ms ON ms.StaffID = rr.StaffID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY rl.SupplyID;";
             MySqlCommand receiveCommand = new MySqlCommand(receiveDisplay, myconn);
             MySqlDataAdapter da4 = new MySqlDataAdapter(receiveCommand);
             da4.Fill(receiveTable);
             dataGridView1.DataSource = receiveTable;
 
             DataTable requestTable = new DataTable();
-            string requestDisplay = "SELECT * from requisition_line";
+            string requestDisplay = "SELECT r.DateOfRequisition AS Date_of_Requisition, CONCAT(ms.LastName, ',' , ms.StaffType) AS Staff, CONCAT(mn.MedicineName, ',' , mn.UnitType) AS Medicine, rl.Quantity as Quantity from requisition r LEFT JOIN requisition_line rl ON r.idRequisition = Requisition_idRequisition LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = rl.SupplyID LEFT JOIN medical_staff ms ON ms.StaffID = r.StaffID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY idRequisition;";
             MySqlCommand requestCommand = new MySqlCommand(requestDisplay, myconn);
             MySqlDataAdapter da5 = new MySqlDataAdapter(requestCommand);
             da5.Fill(requestTable);
@@ -42,14 +43,15 @@ namespace sadProject
 
             //restock combobox
             DataTable dt1 = new DataTable();
-            string restock = "SELECT CONCAT(MedicineName , ', ' , UnitType) AS Medicine, idMedicineName FROM medicine_name";
+            //string restock = "SELECT CONCAT(MedicineName , ', ' , UnitType) AS Medicine, idMedicineName FROM medicine_name";
+            string restock = "SELECT CONCAT(mn.MedicineName , ', ' , mn.UnitType) AS Medicine, SupplyID FROM medicine_name mn LEFT JOIN medical_supplies_inventory msi ON msi.idMedicineName = mn.idMedicineName WHERE msi.idMedicineName = mn.idMedicineName;";
             MySqlCommand mycommand1 = new MySqlCommand(restock, myconn);
             MySqlDataAdapter da1 = new MySqlDataAdapter(mycommand1);
             da1.Fill(dt1);
 
             receiveMed.DataSource = dt1;
             receiveMed.DisplayMember = "Medicine";
-            receiveMed.ValueMember = "idMedicineName";
+            receiveMed.ValueMember = "SupplyID";
 
             receiveMed.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             receiveMed.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
@@ -57,14 +59,16 @@ namespace sadProject
         
             //requisition combobox
             DataTable dt2 = new DataTable();
-            string request = "SELECT CONCAT(MedicineName , ', ' , UnitType) AS Medicine, idMedicineName FROM medicine_name";
+            //string request = "SELECT CONCAT(MedicineName , ', ' , UnitType) AS Medicine, idMedicineName FROM medicine_name";
+            string request = "SELECT CONCAT(mn.MedicineName , ', ' , mn.UnitType) AS Medicine, SupplyID FROM medicine_name mn LEFT JOIN medical_supplies_inventory msi ON msi.idMedicineName = mn.idMedicineName WHERE msi.idMedicineName = mn.idMedicineName;";
+
             MySqlCommand mycommand2 = new MySqlCommand(request, myconn);
             MySqlDataAdapter da2 = new MySqlDataAdapter(mycommand2);
             da2.Fill(dt2);
 
             med_supplies.DataSource = dt2;
             med_supplies.DisplayMember = "Medicine";
-            med_supplies.ValueMember = "idMedicineName";
+            med_supplies.ValueMember = "SupplyID";
 
             med_supplies.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             med_supplies.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
@@ -99,13 +103,13 @@ namespace sadProject
             try
             {
 
-                string requisition = "INSERT INTO requisition (Medical_Staff_StaffID, DateOfRequisition) VALUES ('"
+                string requisition = "INSERT INTO requisition (StaffID, DateOfRequisition) VALUES ('"
                        + this.staffId.SelectedValue + "','"
                        + this.dateRequest.Value.ToString("yyyy/MM/dd") +
                        "');";
 
-                string requisitionLine = "INSERT INTO requisition_line (Medical_Supplies_Inventory_SupplyID, Quantity) VALUES ('"
-                        + this.med_supplies.SelectedValue + "','"
+                string requisitionLine = "INSERT INTO requisition_line (Requisition_idRequisition, SupplyID, Quantity) VALUES ((select idRequisition from requisition order by idRequisition desc limit 1),'"
+                    + this.med_supplies.SelectedValue + "','"
                         + this.metroTextBox1.Text +
                         "');";
 
@@ -120,8 +124,11 @@ namespace sadProject
                 reqCommand.ExecuteReader();
                 reqlineCommand.ExecuteReader();
                 MessageBox.Show("SUCCESSFULLY REQUEST");
-                loadData();
                 myConn.Close();
+
+
+                loadData();
+                
 
                 
             }
@@ -145,12 +152,12 @@ namespace sadProject
             try
             {
 
-                string receiving_report = "INSERT INTO receiving_report (Medical_Staff_StaffID, DateOfReceive) VALUES ('"
+                string receiving_report = "INSERT INTO receiving_report (StaffID, DateOfReceive) VALUES ('"
                        + this.staffId.SelectedValue + "','"
                        + this.dateReceived.Value.ToString("yyyy/MM/dd") +
                        "');";
 
-                string receiving_line = "INSERT INTO receiving_line (Medical_Supplies_Inventory_SupplyID, Quantity, ExpirationDate) VALUES ('"
+                string receiving_line = "INSERT INTO receiving_line (idReceivingReport, SupplyID, Quantity, ExpirationDate) VALUES ((SELECT idReceivingReport FROM receiving_report order by idReceivingReport desc limit 1),'"
                         + this.receiveMed.SelectedValue + "','"
                         + this.metroTextBox2.Text + "','"
                         +this.dateRestock.Value.ToString("yyyy/MM/dd") +

@@ -30,9 +30,9 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.medicineName = new System.Windows.Forms.ComboBox();
             this.issuanceDate = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.quantity = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,13 +58,13 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // comboBox1
+            // medicineName
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(526, 13);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(213, 21);
-            this.comboBox1.TabIndex = 2;
+            this.medicineName.FormattingEnabled = true;
+            this.medicineName.Location = new System.Drawing.Point(526, 13);
+            this.medicineName.Name = "medicineName";
+            this.medicineName.Size = new System.Drawing.Size(213, 21);
+            this.medicineName.TabIndex = 2;
             // 
             // issuanceDate
             // 
@@ -73,10 +73,10 @@
             this.issuanceDate.Size = new System.Drawing.Size(213, 20);
             this.issuanceDate.TabIndex = 3;
             // 
-            // comboBox2
+            // quantity
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.quantity.FormattingEnabled = true;
+            this.quantity.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -86,10 +86,10 @@
             "7",
             "8",
             "9"});
-            this.comboBox2.Location = new System.Drawing.Point(526, 107);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(213, 21);
-            this.comboBox2.TabIndex = 4;
+            this.quantity.Location = new System.Drawing.Point(526, 107);
+            this.quantity.Name = "quantity";
+            this.quantity.Size = new System.Drawing.Size(213, 21);
+            this.quantity.TabIndex = 4;
             // 
             // label1
             // 
@@ -126,9 +126,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.quantity);
             this.Controls.Add(this.issuanceDate);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.medicineName);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -146,9 +146,9 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox medicineName;
         private System.Windows.Forms.DateTimePicker issuanceDate;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox quantity;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

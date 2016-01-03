@@ -19,22 +19,84 @@ namespace sadProject
         {
             InitializeComponent();
         }
+        private void loadRequisitionData()
+        {
+            string MyConnection2 = "server=localhost;database=healthcenter;Persist Security Info = True; User Id=root; password=root";
+            MySqlConnection myconn = new MySqlConnection(MyConnection2);
 
-        private void loadData()
+
+            DataTable requestTable = new DataTable();
+            string requestDisplay = "SELECT r.DateOfRequisition AS Date_of_Requisition, CONCAT(ms.LastName, ',' , ms.StaffType) AS Staff, CONCAT(mn.MedicineName, ',' , mn.UnitType) AS Medicine, rl.Quantity as Quantity from requisition r LEFT JOIN requisition_line rl ON r.idRequisition = Requisition_idRequisition LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = rl.SupplyID LEFT JOIN medical_staff ms ON ms.StaffID = r.StaffID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY idRequisition ORDER BY idRequisition DESC;";
+            MySqlCommand requestCommand = new MySqlCommand(requestDisplay, myconn);
+            MySqlDataAdapter da5 = new MySqlDataAdapter(requestCommand);
+            da5.Fill(requestTable);
+            dataGridView2.DataSource = requestTable;
+
+            //requisition combobox
+            DataTable dt2 = new DataTable();
+            //string request = "SELECT CONCAT(MedicineName , ', ' , UnitType) AS Medicine, idMedicineName FROM medicine_name";
+            string request = "SELECT CONCAT(mn.MedicineName , ', ' , mn.UnitType) AS Medicine, SupplyID FROM medicine_name mn LEFT JOIN medical_supplies_inventory msi ON msi.idMedicineName = mn.idMedicineName WHERE msi.idMedicineName = mn.idMedicineName;";
+
+            MySqlCommand mycommand2 = new MySqlCommand(request, myconn);
+            MySqlDataAdapter da2 = new MySqlDataAdapter(mycommand2);
+            da2.Fill(dt2);
+
+            med_supplies.DataSource = dt2;
+            med_supplies.DisplayMember = "Medicine";
+            med_supplies.ValueMember = "SupplyID";
+
+            med_supplies.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            med_supplies.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            med_supplies.AutoCompleteSource = AutoCompleteSource.ListItems;
+        }
+
+        private void loadReceiveData()
         {
             string MyConnection2 = "server=localhost;database=healthcenter;Persist Security Info = True; User Id=root; password=root";
             MySqlConnection myconn = new MySqlConnection(MyConnection2);
 
             DataTable receiveTable = new DataTable();
             //string receiveDisplay = "SELECT rr.DateOfReceive as Date_of_Receive, CONCAT(ms.LastName, ',' ,ms.StaffType) AS Staff, CONCAT(mn.MedicineName, ',' ,mn.UnitType) AS Medicine, rl.Quantity as Quantity, rl.ExpirationDate as Expiration_Date FROM receiving_report rr LEFT JOIN receiving_line rl ON rl.idReceivingReport = rr.idReceivingReport LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = rl.SupplyID LEFT JOIN medical_staff ms ON ms.StaffID = rr.StaffID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY rr.idReceivingReport;";
-            string receiveDisplay = "SELECT rr.DateOfReceive as Date_of_Receive, CONCAT(ms.LastName, ',' ,ms.StaffType) AS Staff, CONCAT(mn.MedicineName, ',' ,mn.UnitType) AS Medicine, SUM(rl.Quantity) as Quantity, rl.ExpirationDate as Expiration_Date FROM receiving_report rr LEFT JOIN receiving_line rl ON rl.idReceivingReport = rr.idReceivingReport LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = rl.SupplyID LEFT JOIN medical_staff ms ON ms.StaffID = rr.StaffID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY rl.SupplyID;";
+            string receiveDisplay = "SELECT rr.DateOfReceive as Date_of_Receive, CONCAT(ms.LastName, ',' ,ms.StaffType) AS Staff, CONCAT(mn.MedicineName, ',' ,mn.UnitType) AS Medicine, SUM(rl.Quantity) as Total_Quantity, rl.ExpirationDate as Expiration_Date FROM receiving_report rr LEFT JOIN receiving_line rl ON rl.idReceivingReport = rr.idReceivingReport LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = rl.SupplyID LEFT JOIN medical_staff ms ON ms.StaffID = rr.StaffID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY rl.SupplyID ORDER BY rl.SupplyID DESC;";
+            MySqlCommand receiveCommand = new MySqlCommand(receiveDisplay, myconn);
+            MySqlDataAdapter da4 = new MySqlDataAdapter(receiveCommand);
+            da4.Fill(receiveTable);
+            dataGridView1.DataSource = receiveTable;
+
+            //restock combobox
+            DataTable dt1 = new DataTable();
+            //string restock = "SELECT CONCAT(MedicineName , ', ' , UnitType) AS Medicine, idMedicineName FROM medicine_name";
+            string restock = "SELECT CONCAT(mn.MedicineName , ', ' , mn.UnitType) AS Medicine, SupplyID FROM medicine_name mn LEFT JOIN medical_supplies_inventory msi ON msi.idMedicineName = mn.idMedicineName WHERE msi.idMedicineName = mn.idMedicineName;";
+            MySqlCommand mycommand1 = new MySqlCommand(restock, myconn);
+            MySqlDataAdapter da1 = new MySqlDataAdapter(mycommand1);
+            da1.Fill(dt1);
+
+            receiveMed.DataSource = dt1;
+            receiveMed.DisplayMember = "Medicine";
+            receiveMed.ValueMember = "SupplyID";
+
+            receiveMed.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            receiveMed.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            receiveMed.AutoCompleteSource = AutoCompleteSource.ListItems;
+
+        }
+
+        private void loadAllData()
+        {
+            string MyConnection2 = "server=localhost;database=healthcenter;Persist Security Info = True; User Id=root; password=root";
+            MySqlConnection myconn = new MySqlConnection(MyConnection2);
+
+            DataTable receiveTable = new DataTable();
+            string receiveDisplay = "SELECT rr.DateOfReceive as Date_of_Receive, CONCAT(ms.LastName, ',' ,ms.StaffType) AS Staff, CONCAT(mn.MedicineName, ',' ,mn.UnitType) AS Medicine, rl.Quantity as Quantity, rl.ExpirationDate as Expiration_Date FROM receiving_report rr LEFT JOIN receiving_line rl ON rl.idReceivingReport = rr.idReceivingReport LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = rl.SupplyID LEFT JOIN medical_staff ms ON ms.StaffID = rr.StaffID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY rr.idReceivingReport ORDER BY rl.SupplyID DESC;";
+            //with total quantity
+            //string receiveDisplay = "SELECT rr.DateOfReceive as Date_of_Receive, CONCAT(ms.LastName, ',' ,ms.StaffType) AS Staff, CONCAT(mn.MedicineName, ',' ,mn.UnitType) AS Medicine, SUM(rl.Quantity) as Total_Quantity, rl.ExpirationDate as Expiration_Date FROM receiving_report rr LEFT JOIN receiving_line rl ON rl.idReceivingReport = rr.idReceivingReport LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = rl.SupplyID LEFT JOIN medical_staff ms ON ms.StaffID = rr.StaffID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY rl.SupplyID ORDER BY rl.SupplyID DESC;";
             MySqlCommand receiveCommand = new MySqlCommand(receiveDisplay, myconn);
             MySqlDataAdapter da4 = new MySqlDataAdapter(receiveCommand);
             da4.Fill(receiveTable);
             dataGridView1.DataSource = receiveTable;
 
             DataTable requestTable = new DataTable();
-            string requestDisplay = "SELECT r.DateOfRequisition AS Date_of_Requisition, CONCAT(ms.LastName, ',' , ms.StaffType) AS Staff, CONCAT(mn.MedicineName, ',' , mn.UnitType) AS Medicine, rl.Quantity as Quantity from requisition r LEFT JOIN requisition_line rl ON r.idRequisition = Requisition_idRequisition LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = rl.SupplyID LEFT JOIN medical_staff ms ON ms.StaffID = r.StaffID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY idRequisition;";
+            string requestDisplay = "SELECT r.DateOfRequisition AS Date_of_Requisition, CONCAT(ms.LastName, ',' , ms.StaffType) AS Staff, CONCAT(mn.MedicineName, ',' , mn.UnitType) AS Medicine, rl.Quantity as Quantity from requisition r LEFT JOIN requisition_line rl ON r.idRequisition = Requisition_idRequisition LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = rl.SupplyID LEFT JOIN medical_staff ms ON ms.StaffID = r.StaffID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY idRequisition ORDER BY idRequisition DESC;";
             MySqlCommand requestCommand = new MySqlCommand(requestDisplay, myconn);
             MySqlDataAdapter da5 = new MySqlDataAdapter(requestCommand);
             da5.Fill(requestTable);
@@ -92,7 +154,7 @@ namespace sadProject
 
         private void searchMedicalSupplies_Load(object sender, EventArgs e)
         {
-            loadData();
+            loadAllData();
         }
 
        
@@ -127,7 +189,7 @@ namespace sadProject
                 myConn.Close();
 
 
-                loadData();
+                loadRequisitionData();
                 
 
                 
@@ -176,12 +238,27 @@ namespace sadProject
                 MessageBox.Show("SUCCESSFULLY RECEIVED");
                 myConn.Close();
 
-                loadData();
+                loadReceiveData();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void staffId_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

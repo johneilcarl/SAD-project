@@ -10,10 +10,11 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.Sql;
 using MySql.Data.MySqlClient;
+using MetroFramework.Forms;
 
 namespace sadProject
 {
-    public partial class distributeMeds : Form
+    public partial class distributeMeds : MetroForm
     {
         public distributeMeds()
         {
@@ -41,7 +42,7 @@ namespace sadProject
 
             DataTable dispensetb = new DataTable();
             //string dispenseDisplay = "SELECT i.DateOfIssuance as Date_of_Issuance, CONCAT(mn.MedicineName, ',' ,mn.UnitType) as Medicine,  SUM(il.Quantity) as Quantity FROM issuance i LEFT JOIN issuance_line il ON i.IssuanceID = il.IssuanceID LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = il.SupplyID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY il.SupplyID;";
-            string dispenseDisplay = "SELECT i.DateOfIssuance as Date_of_Issuance, CONCAT(mn.MedicineName, ',' ,mn.UnitType) as Medicine, il.Quantity as Quantity FROM issuance i LEFT JOIN issuance_line il ON i.IssuanceID = il.IssuanceID LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = il.SupplyID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY i.IssuanceID;";
+            string dispenseDisplay = "SELECT i.DateOfIssuance as Date_of_Issuance, CONCAT(mn.MedicineName, ',' ,mn.UnitType) as Medicine, il.Quantity as Quantity, il.ExpirationDate as Expiration_Date FROM issuance i LEFT JOIN issuance_line il ON i.IssuanceID = il.IssuanceID LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = il.SupplyID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY i.IssuanceID ORDER BY i.IssuanceID desc;";
             MySqlCommand disCom = new MySqlCommand(dispenseDisplay, myconn);
             MySqlDataAdapter da5 = new MySqlDataAdapter(disCom);
             da5.Fill(dispensetb);
@@ -61,12 +62,13 @@ namespace sadProject
             {
 
                 string issuanceQuery = "INSERT INTO issuance (DateOfIssuance) VALUES ('"
-                       + this.issuanceDate.Value.ToString("yyyy/MM/dd") +
+                       + this.dispenseDate.Value.ToString("yyyy/MM/dd") +
                        "');";
 
-                string issuance_line = "INSERT INTO issuance_line (IssuanceID, SupplyID, Quantity) VALUES ((SELECT IssuanceID FROM issuance ORDER BY IssuanceID desc limit 1),'"
+                string issuance_line = "INSERT INTO issuance_line (IssuanceID, SupplyID, Quantity, ExpirationDate) VALUES ((SELECT IssuanceID FROM issuance ORDER BY IssuanceID desc limit 1),'"
                         + this.medicineName.SelectedValue + "','"
-                        + this.quantity.SelectedItem + 
+                        + this.quantity.SelectedItem + "','"
+                        +this.expirationDate.Value.ToString("yyyy/MM/dd") +
                         "');";
 
                 MySqlConnection myConn = new MySqlConnection(myConnection);

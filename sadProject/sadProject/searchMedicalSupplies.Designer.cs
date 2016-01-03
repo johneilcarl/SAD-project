@@ -69,13 +69,11 @@
             this.groupBox1.Controls.Add(this.receiveMed);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.dateReceived);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(123, 94);
+            this.groupBox1.Location = new System.Drawing.Point(68, 65);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(903, 239);
+            this.groupBox1.Size = new System.Drawing.Size(1020, 268);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "MEDICAL SUPPLIES DETAILS";
@@ -96,7 +94,7 @@
             this.metroTextBox2.CustomButton.UseSelectable = true;
             this.metroTextBox2.CustomButton.Visible = false;
             this.metroTextBox2.Lines = new string[0];
-            this.metroTextBox2.Location = new System.Drawing.Point(11, 78);
+            this.metroTextBox2.Location = new System.Drawing.Point(51, 83);
             this.metroTextBox2.MaxLength = 32767;
             this.metroTextBox2.Name = "metroTextBox2";
             this.metroTextBox2.PasswordChar = '\0';
@@ -113,7 +111,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 104);
+            this.label8.Location = new System.Drawing.Point(46, 109);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(79, 13);
             this.label8.TabIndex = 14;
@@ -121,7 +119,7 @@
             // 
             // dateRestock
             // 
-            this.dateRestock.Location = new System.Drawing.Point(9, 120);
+            this.dateRestock.Location = new System.Drawing.Point(49, 125);
             this.dateRestock.Name = "dateRestock";
             this.dateRestock.Size = new System.Drawing.Size(223, 20);
             this.dateRestock.TabIndex = 13;
@@ -129,7 +127,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 63);
+            this.label9.Location = new System.Drawing.Point(46, 68);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(49, 13);
             this.label9.TabIndex = 12;
@@ -138,7 +136,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 23);
+            this.label10.Location = new System.Drawing.Point(46, 28);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(100, 13);
             this.label10.TabIndex = 11;
@@ -147,14 +145,14 @@
             // receiveMed
             // 
             this.receiveMed.FormattingEnabled = true;
-            this.receiveMed.Location = new System.Drawing.Point(9, 39);
+            this.receiveMed.Location = new System.Drawing.Point(49, 44);
             this.receiveMed.Name = "receiveMed";
             this.receiveMed.Size = new System.Drawing.Size(223, 21);
             this.receiveMed.TabIndex = 10;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(34, 197);
+            this.button2.Location = new System.Drawing.Point(74, 202);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(172, 36);
             this.button2.TabIndex = 8;
@@ -166,14 +164,14 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(240, 43);
+            this.dataGridView1.Location = new System.Drawing.Point(352, 52);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(657, 190);
             this.dataGridView1.TabIndex = 6;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(688, 16);
+            this.dateTimePicker2.Location = new System.Drawing.Point(727, 39);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker2.TabIndex = 5;
@@ -181,7 +179,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(628, 19);
+            this.label3.Location = new System.Drawing.Point(667, 42);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 4;
@@ -189,7 +187,7 @@
             // 
             // dateReceived
             // 
-            this.dateReceived.Location = new System.Drawing.Point(8, 176);
+            this.dateReceived.Location = new System.Drawing.Point(48, 181);
             this.dateReceived.Name = "dateReceived";
             this.dateReceived.Size = new System.Drawing.Size(221, 20);
             this.dateReceived.TabIndex = 3;
@@ -197,7 +195,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 160);
+            this.label2.Location = new System.Drawing.Point(45, 165);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 13);
             this.label2.TabIndex = 2;
@@ -206,19 +204,21 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(423, 67);
+            this.comboBox1.Location = new System.Drawing.Point(420, 38);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(219, 21);
             this.comboBox1.TabIndex = 1;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(317, 71);
+            this.label1.Location = new System.Drawing.Point(314, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Med. Supply Name:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // groupBox2
             // 
@@ -230,9 +230,9 @@
             this.groupBox2.Controls.Add(this.med_supplies);
             this.groupBox2.Controls.Add(this.reqButton);
             this.groupBox2.Controls.Add(this.dataGridView2);
-            this.groupBox2.Location = new System.Drawing.Point(123, 339);
+            this.groupBox2.Location = new System.Drawing.Point(68, 339);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(903, 220);
+            this.groupBox2.Size = new System.Drawing.Size(1020, 272);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "REQUISITION DETAILS";
@@ -252,7 +252,7 @@
             this.metroTextBox1.CustomButton.UseSelectable = true;
             this.metroTextBox1.CustomButton.Visible = false;
             this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(11, 86);
+            this.metroTextBox1.Location = new System.Drawing.Point(48, 95);
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
@@ -269,7 +269,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 111);
+            this.label6.Location = new System.Drawing.Point(45, 120);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 13);
             this.label6.TabIndex = 7;
@@ -277,7 +277,7 @@
             // 
             // dateRequest
             // 
-            this.dateRequest.Location = new System.Drawing.Point(11, 127);
+            this.dateRequest.Location = new System.Drawing.Point(48, 136);
             this.dateRequest.Name = "dateRequest";
             this.dateRequest.Size = new System.Drawing.Size(223, 20);
             this.dateRequest.TabIndex = 6;
@@ -285,7 +285,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 70);
+            this.label5.Location = new System.Drawing.Point(45, 79);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 5;
@@ -294,7 +294,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 30);
+            this.label4.Location = new System.Drawing.Point(45, 39);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 13);
             this.label4.TabIndex = 4;
@@ -303,14 +303,14 @@
             // med_supplies
             // 
             this.med_supplies.FormattingEnabled = true;
-            this.med_supplies.Location = new System.Drawing.Point(11, 46);
+            this.med_supplies.Location = new System.Drawing.Point(48, 55);
             this.med_supplies.Name = "med_supplies";
             this.med_supplies.Size = new System.Drawing.Size(223, 21);
             this.med_supplies.TabIndex = 3;
             // 
             // reqButton
             // 
-            this.reqButton.Location = new System.Drawing.Point(34, 163);
+            this.reqButton.Location = new System.Drawing.Point(71, 172);
             this.reqButton.Name = "reqButton";
             this.reqButton.Size = new System.Drawing.Size(172, 36);
             this.reqButton.TabIndex = 1;
@@ -322,7 +322,7 @@
             // 
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(240, 19);
+            this.dataGridView2.Location = new System.Drawing.Point(352, 19);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(657, 195);
             this.dataGridView2.TabIndex = 0;
@@ -330,10 +330,11 @@
             // staffId
             // 
             this.staffId.FormattingEnabled = true;
-            this.staffId.Location = new System.Drawing.Point(134, 67);
+            this.staffId.Location = new System.Drawing.Point(131, 38);
             this.staffId.Name = "staffId";
             this.staffId.Size = new System.Drawing.Size(174, 21);
             this.staffId.TabIndex = 2;
+            this.staffId.SelectedIndexChanged += new System.EventHandler(this.staffId_SelectedIndexChanged);
             // 
             // searchMedicalSupplies
             // 
@@ -345,6 +346,8 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.label3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "searchMedicalSupplies";
             this.Text = "searchMedicalSupplies";

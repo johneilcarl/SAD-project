@@ -155,3 +155,6 @@ D:\Downloads\sadProject\sadProject\obj\Debug\sadProject.searchMedicalSupplies.re
 D:\Downloads\sadProject\sadProject\obj\Debug\sadProject.searchpatientform.resources
 D:\Downloads\sadProject\sadProject\obj\Debug\sadProject.updateOrientationSched.resources
 D:\Downloads\sadProject\sadProject\obj\Debug\sadProject.csproj.GenerateResource.Cache
+C:\Users\jcbtagudin\Desktop\SAD-project\sadProject\sadProject\bin\Debug\sadProject.exe.config
+C:\Users\jcbtagudin\Desktop\SAD-project\sadProject\sadProject\obj\Debug\sadProject.exe
+C:\Users\jcbtagudin\Desktop\SAD-project\sadProject\sadProject\obj\Debug\sadProject.pdb

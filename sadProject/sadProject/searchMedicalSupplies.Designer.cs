@@ -37,10 +37,10 @@
             this.receiveMed = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
             this.dateReceived = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -123,6 +123,7 @@
             this.dateRestock.Name = "dateRestock";
             this.dateRestock.Size = new System.Drawing.Size(223, 20);
             this.dateRestock.TabIndex = 13;
+            this.dateRestock.ValueChanged += new System.EventHandler(this.dateRestock_ValueChanged);
             // 
             // label9
             // 
@@ -169,6 +170,23 @@
             this.dataGridView1.Size = new System.Drawing.Size(657, 190);
             this.dataGridView1.TabIndex = 6;
             // 
+            // dateReceived
+            // 
+            this.dateReceived.Location = new System.Drawing.Point(48, 181);
+            this.dateReceived.Name = "dateReceived";
+            this.dateReceived.Size = new System.Drawing.Size(221, 20);
+            this.dateReceived.TabIndex = 3;
+            this.dateReceived.ValueChanged += new System.EventHandler(this.dateReceived_ValueChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(45, 165);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Date of Received";
+            // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Location = new System.Drawing.Point(727, 39);
@@ -184,22 +202,6 @@
             this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Exp. Date";
-            // 
-            // dateReceived
-            // 
-            this.dateReceived.Location = new System.Drawing.Point(48, 181);
-            this.dateReceived.Name = "dateReceived";
-            this.dateReceived.Size = new System.Drawing.Size(221, 20);
-            this.dateReceived.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(45, 165);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Date of Received";
             // 
             // comboBox1
             // 

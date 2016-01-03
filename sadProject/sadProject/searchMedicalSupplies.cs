@@ -147,6 +147,7 @@ namespace sadProject
             staffId.ValueMember = "StaffID";
         }
 
+        
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
@@ -154,6 +155,11 @@ namespace sadProject
 
         private void searchMedicalSupplies_Load(object sender, EventArgs e)
         {
+
+
+        
+            //dateReceived.MinDate = DateTime.Now;
+            dateReceived.MaxDate = DateTime.Now;
             loadAllData();
         }
 
@@ -257,6 +263,16 @@ namespace sadProject
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateRestock_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateReceived_ValueChanged(object sender, EventArgs e)
         {
 
         }

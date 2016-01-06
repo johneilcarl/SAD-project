@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{70554B0F-C287-43B7-A21C-F2CE09502D20}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>sadProject</RootNamespace>
+    <AssemblyName>sadProject</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MetroFramework">
+      <HintPath>..\packages\MetroModernUI.1.3.5.0\lib\net45\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\packages\MetroModernUI.1.3.5.0\lib\net45\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\packages\MetroModernUI.1.3.5.0\lib\net45\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.5.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MySQL\Connector NET 6.5.4\Assemblies\v4.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="addNewParticipants.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addNewParticipants.Designer.cs">
+      <DependentUpon>addNewParticipants.cs</DependentUpon>
+    </Compile>
+    <Compile Include="checkupSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="checkupSchedule.Designer.cs">
+      <DependentUpon>checkupSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="createnewOrientation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="createnewOrientation.Designer.cs">
+      <DependentUpon>createnewOrientation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="createpatientform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="createpatientform.Designer.cs">
+      <DependentUpon>createpatientform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="createPrescription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="createPrescription.Designer.cs">
+      <DependentUpon>createPrescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="distributeMeds.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="distributeMeds.Designer.cs">
+      <DependentUpon>distributeMeds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editPMR_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editPMR_Form.Designer.cs">
+      <DependentUpon>editPMR_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inventorySubReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inventorySubReport.Designer.cs">
+      <DependentUpon>inventorySubReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventorySubsystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventorySubsystem.Designer.cs">
+      <DependentUpon>InventorySubsystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main.Designer.cs">
+      <DependentUpon>main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MCInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MCInventory.Designer.cs">
+      <DependentUpon>MCInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medicalSuppliesInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medicalSuppliesInventory.Designer.cs">
+      <DependentUpon>medicalSuppliesInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="monthlyReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="monthlyReport.Designer.cs">
+      <DependentUpon>monthlyReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mothersClassReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mothersClassReport.Designer.cs">
+      <DependentUpon>mothersClassReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PMSboxes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PMSboxes.Designer.cs">
+      <DependentUpon>PMSboxes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="recordPatDiagnosis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="recordPatDiagnosis.Designer.cs">
+      <DependentUpon>recordPatDiagnosis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Referral_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Referral_Form.Designer.cs">
+      <DependentUpon>Referral_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="searchMedicalSupplies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="searchMedicalSupplies.Designer.cs">
+      <DependentUpon>searchMedicalSupplies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="searchpatientform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="searchpatientform.Designer.cs">
+      <DependentUpon>searchpatientform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="updateOrientationSched.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="updateOrientationSched.Designer.cs">
+      <DependentUpon>updateOrientationSched.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForm.Designer.cs">
+      <DependentUpon>ViewForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="addNewParticipants.resx">
+      <DependentUpon>addNewParticipants.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="checkupSchedule.resx">
+      <DependentUpon>checkupSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="createnewOrientation.resx">
+      <DependentUpon>createnewOrientation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="createpatientform.resx">
+      <DependentUpon>createpatientform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="createPrescription.resx">
+      <DependentUpon>createPrescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="distributeMeds.resx">
+      <DependentUpon>distributeMeds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editPMR_Form.resx">
+      <DependentUpon>editPMR_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inventorySubReport.resx">
+      <DependentUpon>inventorySubReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventorySubsystem.resx">
+      <DependentUpon>InventorySubsystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main.resx">
+      <DependentUpon>main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MCInventory.resx">
+      <DependentUpon>MCInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medicalSuppliesInventory.resx">
+      <DependentUpon>medicalSuppliesInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="monthlyReport.resx">
+      <DependentUpon>monthlyReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mothersClassReport.resx">
+      <DependentUpon>mothersClassReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PMSboxes.resx">
+      <DependentUpon>PMSboxes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="recordPatDiagnosis.resx">
+      <DependentUpon>recordPatDiagnosis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Referral_Form.resx">
+      <DependentUpon>Referral_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="searchMedicalSupplies.resx">
+      <DependentUpon>searchMedicalSupplies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="searchpatientform.resx">
+      <DependentUpon>searchpatientform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="updateOrientationSched.resx">
+      <DependentUpon>updateOrientationSched.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForm.resx">
+      <DependentUpon>ViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

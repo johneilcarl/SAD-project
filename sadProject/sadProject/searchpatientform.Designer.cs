@@ -31,7 +31,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.patient_name = new System.Windows.Forms.ComboBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -89,13 +89,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PATIENT INFORMATION";
             // 
-            // comboBox1
+            // patient_name
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(561, 27);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(286, 21);
-            this.comboBox1.TabIndex = 15;
+            this.patient_name.FormattingEnabled = true;
+            this.patient_name.Location = new System.Drawing.Point(561, 27);
+            this.patient_name.Name = "patient_name";
+            this.patient_name.Size = new System.Drawing.Size(286, 21);
+            this.patient_name.TabIndex = 15;
             // 
             // metroLabel1
             // 
@@ -179,7 +179,7 @@
             this.ClientSize = new System.Drawing.Size(1213, 637);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.patient_name);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.groupBox1);
@@ -188,7 +188,7 @@
             this.MinimizeBox = false;
             this.Name = "searchpatientform";
             this.ShowInTaskbar = false;
-            this.Style = MetroFramework.MetroColorStyle.Pink;
+            this.Style = MetroFramework.MetroColorStyle.Lime;
             this.Text = "Search Patient Profile";
             this.Load += new System.EventHandler(this.searchpatientform_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -216,6 +216,6 @@
         private System.Windows.Forms.GroupBox groupBox4;
         public System.Windows.Forms.DataGridView dataGridView3;
         public System.Windows.Forms.DataGridView dataGridView4;
-        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.ComboBox patient_name;
     }
 }

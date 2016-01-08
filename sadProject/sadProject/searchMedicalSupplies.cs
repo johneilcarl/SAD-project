@@ -190,24 +190,43 @@ namespace sadProject
                         listCom.ExecuteNonQuery();
                     }
                 */
+                if(this.fullName.Text == "" && this.richTextBox1.Text == "")
+                {
+                    MessageBox.Show("Name and List must not empty when sending a request");
+                }
+                else
+                {
+                    if (MessageBox.Show("Are you sure you want to save?", "?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        MySqlConnection myConn = new MySqlConnection(myConnection);
+                        MySqlCommand reqCommand = new MySqlCommand(requisition, myConn);
+                        myConn.Open();
 
-                MySqlConnection myConn = new MySqlConnection(myConnection);
-                MySqlCommand reqCommand = new MySqlCommand(requisition, myConn);
-                myConn.Open();
+                        MySqlConnection myConn2 = new MySqlConnection(myConnection);
+                        MySqlCommand reqlineCommand = new MySqlCommand(requisitionLine, myConn2);
+                        myConn2.Open();
 
-                MySqlConnection myConn2 = new MySqlConnection(myConnection);
-                MySqlCommand reqlineCommand = new MySqlCommand(requisitionLine, myConn2);
-                myConn2.Open();
+                        MySqlConnection myConn3 = new MySqlConnection(myConnection);
+                        MySqlCommand nameCommand = new MySqlCommand(requestBy, myConn3);
+                        myConn3.Open();
 
-                MySqlConnection myConn3 = new MySqlConnection(myConnection);
-                MySqlCommand nameCommand = new MySqlCommand(requestBy, myConn3);
-                myConn3.Open();
+                        nameCommand.ExecuteReader();
+                        reqCommand.ExecuteReader();
+                        reqlineCommand.ExecuteReader();
+                        MessageBox.Show("SUCCESSFULLY REQUEST");
+                        myConn.Close();
 
-                nameCommand.ExecuteReader();
-                reqCommand.ExecuteReader();
-                reqlineCommand.ExecuteReader();
-                MessageBox.Show("SUCCESSFULLY REQUEST");
-                myConn.Close();
+                        fullName.Text = "";
+                        quantity.Text = "";
+                        button6_Click(sender, e);
+                        button4_Click(sender, e);
+                    }
+                    else
+                    {
+
+                    }
+                }
+              
 
 
                 loadRequisitionData();

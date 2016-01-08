@@ -105,6 +105,7 @@
             this.receivefullName.Size = new System.Drawing.Size(236, 23);
             this.receivefullName.TabIndex = 22;
             this.receivefullName.UseSelectable = true;
+            this.receivefullName.WaterMark = "LastName, FirstName MiddleName";
             this.receivefullName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.receivefullName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -186,6 +187,7 @@
             this.receivedQuantity.Size = new System.Drawing.Size(234, 23);
             this.receivedQuantity.TabIndex = 15;
             this.receivedQuantity.UseSelectable = true;
+            this.receivedQuantity.WaterMark = "Quantity";
             this.receivedQuantity.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.receivedQuantity.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -199,9 +201,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(307, 333);
+            this.button2.Location = new System.Drawing.Point(300, 320);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(102, 50);
+            this.button2.Size = new System.Drawing.Size(118, 63);
             this.button2.TabIndex = 8;
             this.button2.Text = "RESTOCK";
             this.button2.UseVisualStyleBackColor = true;
@@ -329,7 +331,7 @@
             // 
             // reqButton
             // 
-            this.reqButton.Location = new System.Drawing.Point(150, 200);
+            this.reqButton.Location = new System.Drawing.Point(292, 186);
             this.reqButton.Name = "reqButton";
             this.reqButton.Size = new System.Drawing.Size(147, 64);
             this.reqButton.TabIndex = 1;

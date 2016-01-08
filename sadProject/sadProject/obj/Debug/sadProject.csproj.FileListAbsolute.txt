@@ -191,3 +191,36 @@ C:\Users\jcbtagudin\Desktop\SAD-project\New folder\sadProject\obj\Debug\sadProje
 C:\Users\jcbtagudin\Desktop\SAD-project\New folder\sadProject\obj\Debug\sadProject.updateOrientationSched.resources
 C:\Users\jcbtagudin\Desktop\SAD-project\New folder\sadProject\obj\Debug\sadProject.ViewForm.resources
 C:\Users\jcbtagudin\Desktop\SAD-project\New folder\sadProject\obj\Debug\sadProject.csproj.GenerateResource.Cache
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\bin\Debug\sadProject.exe.config
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\obj\Debug\sadProject.exe
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\obj\Debug\sadProject.pdb
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\bin\Debug\sadProject.exe
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\bin\Debug\sadProject.pdb
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\bin\Debug\MetroFramework.Design.dll
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\bin\Debug\MetroFramework.dll
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\bin\Debug\MetroFramework.Fonts.dll
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\obj\Debug\sadProject.csprojResolveAssemblyReference.cache
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\obj\Debug\sadProject.addNewParticipants.resources
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\obj\Debug\sadProject.checkupSchedule.resources
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\obj\Debug\sadProject.createnewOrientation.resources
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\obj\Debug\sadProject.createpatientform.resources
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\obj\Debug\sadProject.createPrescription.resources
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\obj\Debug\sadProject.distributeMeds.resources
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\obj\Debug\sadProject.editPMR_Form.resources
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\obj\Debug\sadProject.Form1.resources
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\obj\Debug\sadProject.inventorySubReport.resources
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\obj\Debug\sadProject.InventorySubsystem.resources
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\obj\Debug\sadProject.main.resources
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\obj\Debug\sadProject.MCInventory.resources
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\obj\Debug\sadProject.medicalSuppliesInventory.resources
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\obj\Debug\sadProject.monthlyReport.resources
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\obj\Debug\sadProject.mothersClassReport.resources
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\obj\Debug\sadProject.PMSboxes.resources
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\obj\Debug\sadProject.Properties.Resources.resources
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\obj\Debug\sadProject.recordPatDiagnosis.resources
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\obj\Debug\sadProject.Referral_Form.resources
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\obj\Debug\sadProject.searchMedicalSupplies.resources
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\obj\Debug\sadProject.searchpatientform.resources
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\obj\Debug\sadProject.updateOrientationSched.resources
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\obj\Debug\sadProject.ViewForm.resources
+M:\000 SAD CURRENT DESIGN\1-7-2016\sadProject\obj\Debug\sadProject.csproj.GenerateResource.Cache

@@ -80,7 +80,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(360, 122);
             this.button3.TabIndex = 2;
-            this.button3.Text = "Create Requisition | Search Medical Supplies";
+            this.button3.Text = "Receiving and Requisition";
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);

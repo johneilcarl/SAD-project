@@ -38,10 +38,7 @@ namespace sadProject
 
             dataGridView2.Columns.Clear();
             dataGridView2.Refresh();
-            dataGridView3.Columns.Clear();
-            dataGridView3.Refresh();
-            dataGridView4.Columns.Clear();
-            dataGridView4.Refresh();
+
 
             /*
             //past medical records
@@ -134,6 +131,7 @@ namespace sadProject
                     dataGridView2.DataSource = dt2;
 
 
+
                 }
             }
 
@@ -166,26 +164,8 @@ namespace sadProject
 
         }
 
-        private void dataGridView4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            ViewForm frm = new ViewForm();
-            frm.Pass_Name = patient_name.Text;
-            frm.metroLabel1.Text = this.dataGridView4.CurrentRow.Cells[0].Value.ToString();
-            frm.metroLabel2.Text = this.dataGridView4.CurrentRow.Cells[1].Value.ToString();
-            frm.ShowDialog(this);
-
-        }
-
-        private void dataGridView3_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            ViewForm frm = new ViewForm();
-            frm.Pass_Name = patient_name.Text;
-            frm.metroLabel1.Text = this.dataGridView3.CurrentRow.Cells[0].Value.ToString();
-            frm.metroLabel2.Text = this.dataGridView3.CurrentRow.Cells[1].Value.ToString();
-            frm.ShowDialog(this);
-        }
             
-       
+    
 
 
     }

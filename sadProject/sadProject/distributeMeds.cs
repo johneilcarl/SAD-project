@@ -127,5 +127,15 @@ namespace sadProject
                 
             }*/
         }
+
+        private void quantity_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

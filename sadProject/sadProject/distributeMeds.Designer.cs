@@ -38,7 +38,6 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.quantity = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -49,13 +48,13 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(23, 87);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(410, 269);
+            this.dataGridView1.Size = new System.Drawing.Size(410, 243);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(550, 317);
+            this.button1.Location = new System.Drawing.Point(550, 277);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(213, 41);
             this.button1.TabIndex = 1;
@@ -73,7 +72,7 @@
             // 
             // dispenseDate
             // 
-            this.dispenseDate.Location = new System.Drawing.Point(550, 212);
+            this.dispenseDate.Location = new System.Drawing.Point(550, 172);
             this.dispenseDate.MinimumSize = new System.Drawing.Size(0, 29);
             this.dispenseDate.Name = "dispenseDate";
             this.dispenseDate.Size = new System.Drawing.Size(213, 29);
@@ -81,7 +80,7 @@
             // 
             // expirationDate
             // 
-            this.expirationDate.Location = new System.Drawing.Point(550, 261);
+            this.expirationDate.Location = new System.Drawing.Point(550, 221);
             this.expirationDate.MinimumSize = new System.Drawing.Size(0, 29);
             this.expirationDate.Name = "expirationDate";
             this.expirationDate.Size = new System.Drawing.Size(213, 29);
@@ -99,16 +98,17 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(442, 155);
+            this.metroLabel2.Location = new System.Drawing.Point(486, 120);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(58, 19);
             this.metroLabel2.TabIndex = 11;
             this.metroLabel2.Text = "Quantity";
+            this.metroLabel2.Click += new System.EventHandler(this.metroLabel2_Click);
             // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(442, 212);
+            this.metroLabel3.Location = new System.Drawing.Point(442, 172);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(107, 19);
             this.metroLabel3.TabIndex = 12;
@@ -117,7 +117,7 @@
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(442, 261);
+            this.metroLabel4.Location = new System.Drawing.Point(446, 221);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(98, 19);
             this.metroLabel4.TabIndex = 13;
@@ -125,35 +125,27 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Enabled = false;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(550, 118);
+            this.comboBox1.Location = new System.Drawing.Point(659, 120);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(213, 21);
+            this.comboBox1.Size = new System.Drawing.Size(104, 21);
             this.comboBox1.TabIndex = 14;
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(442, 118);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(91, 19);
-            this.metroLabel5.TabIndex = 15;
-            this.metroLabel5.Text = "Total Quantity";
             // 
             // quantity
             // 
-            this.quantity.Location = new System.Drawing.Point(550, 155);
+            this.quantity.Location = new System.Drawing.Point(550, 120);
             this.quantity.Name = "quantity";
-            this.quantity.Size = new System.Drawing.Size(210, 20);
+            this.quantity.Size = new System.Drawing.Size(104, 20);
             this.quantity.TabIndex = 16;
+            this.quantity.TextChanged += new System.EventHandler(this.quantity_TextChanged);
             // 
             // distributeMeds
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(783, 379);
+            this.ClientSize = new System.Drawing.Size(783, 344);
             this.Controls.Add(this.quantity);
-            this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel3);
@@ -187,7 +179,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private System.Windows.Forms.ComboBox comboBox1;
-        private MetroFramework.Controls.MetroLabel metroLabel5;
         private System.Windows.Forms.TextBox quantity;
     }
 }

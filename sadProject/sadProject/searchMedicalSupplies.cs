@@ -19,6 +19,7 @@ namespace sadProject
         public searchMedicalSupplies()
         {
             InitializeComponent();
+           // listBox1.MouseDoubleClick += new MouseEventHandler(listBox1_DoubleClick);
         }
         private void loadRequisitionData()
         {
@@ -27,7 +28,7 @@ namespace sadProject
 
 
             DataTable requestTable = new DataTable();
-            string requestDisplay = "SELECT r.DateOfRequisition AS Date_of_Requisition, ms.fullName AS Staff_Name, CONCAT(mn.MedicineName, ',' , mn.UnitType) AS Medicine, rl.Quantity as Quantity from requisition r LEFT JOIN requisition_line rl ON r.idRequisition = Requisition_idRequisition LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = rl.SupplyID LEFT JOIN medical_staff ms ON ms.StaffID = r.StaffID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY idRequisition DESC;";
+            string requestDisplay = "SELECT r.DateOfRequisition AS Date_of_Requisition, ms.fullName AS Staff_Name, rl.listMed AS List_of__Requested_Medical_Supplies from requisition r LEFT JOIN requisition_line rl ON r.idRequisition = Requisition_idRequisition LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = rl.SupplyID LEFT JOIN medical_staff ms ON ms.StaffID = r.StaffID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY idRequisition DESC;";
             MySqlCommand requestCommand = new MySqlCommand(requestDisplay, myconn);
             MySqlDataAdapter da5 = new MySqlDataAdapter(requestCommand);
             da5.Fill(requestTable);
@@ -98,7 +99,7 @@ namespace sadProject
             dataGridView1.DataSource = receiveTable;
 
             DataTable requestTable = new DataTable();
-            string requestDisplay = "SELECT r.DateOfRequisition AS Date_of_Requisition, ms.fullName AS Staff_Name, CONCAT(mn.MedicineName, ',' , mn.UnitType) AS Medicine, rl.Quantity as Quantity from requisition r LEFT JOIN requisition_line rl ON r.idRequisition = Requisition_idRequisition LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = rl.SupplyID LEFT JOIN medical_staff ms ON ms.StaffID = r.StaffID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY idRequisition DESC;";
+            string requestDisplay = "SELECT r.DateOfRequisition AS Date_of_Requisition, ms.fullName AS Staff_Name, rl.listMed AS List_of__Requested_Medical_Supplies from requisition r LEFT JOIN requisition_line rl ON r.idRequisition = Requisition_idRequisition LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = rl.SupplyID LEFT JOIN medical_staff ms ON ms.StaffID = r.StaffID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY idRequisition DESC;";
             MySqlCommand requestCommand = new MySqlCommand(requestDisplay, myconn);
             MySqlDataAdapter da5 = new MySqlDataAdapter(requestCommand);
             da5.Fill(requestTable);
@@ -172,10 +173,23 @@ namespace sadProject
                        + this.dateRequest.Value.ToString("yyyy/MM/dd") +
                        "');";
 
-                string requisitionLine = "INSERT INTO requisition_line (Requisition_idRequisition, SupplyID, Quantity) VALUES ((select idRequisition from requisition order by idRequisition desc limit 1),'"
-                    + this.med_supplies.SelectedValue + "','"
-                    + this.quantity.Text +
+                string requisitionLine = "INSERT INTO requisition_line (Requisition_idRequisition, listMed) VALUES ((select idRequisition from requisition order by idRequisition desc limit 1),'"
+                    + this.richTextBox1.Text +
                         "');";
+
+             
+
+                    /*
+                    for (int i = 0; i <= listBox1.Items.Count; i++)
+                    {
+                        string sql = "insert into requisition_med_list (idRequisition, list_med) values((select idRequisition from requisition order by idRequisition desc limit 1),'" + this.listBox1.Items[i] + "')";
+
+                        MySqlConnection listConn = new MySqlConnection(myConnection);
+                        MySqlCommand listCom = new MySqlCommand(sql, listConn);
+                        listConn.Open();
+                        listCom.ExecuteNonQuery();
+                    }
+                */
 
                 MySqlConnection myConn = new MySqlConnection(myConnection);
                 MySqlCommand reqCommand = new MySqlCommand(requisition, myConn);
@@ -267,29 +281,79 @@ namespace sadProject
             }
         }
 
-        private void staffId_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
+
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if(this.quantity.Text != "")
+            {
+                listBox1.Items.Add(this.med_supplies.Text.ToString() + ", \t \t \t" + this.quantity.Text.ToString());
+                this.quantity.Focus();
+                this.quantity.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Please enter quantity","error",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.quantity.Focus();
+            }
+            
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-
+          if(this.listBox1.SelectedIndex >= 0)
+          {
+              this.listBox1.Items.RemoveAt(this.listBox1.SelectedIndex);
+          }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                listBox1.SelectedItems.Clear();
+                for (int i = 0; i < listBox1.Items.Count; i++)
+                {
+                    listBox1.SetSelected(i, true);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
-        private void dateRestock_ValueChanged(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-
+            listBox1.Items.Clear();
         }
 
-        private void dateReceived_ValueChanged(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                button3_Click_1(sender, e);
+                StringBuilder sb = new StringBuilder();
+                foreach (object row in listBox1.SelectedItems)
+                {
+                    sb.Append(row.ToString());
+                    sb.AppendLine();
+                }
+                sb.Remove(sb.Length - 1, 1); // Just to avoid copying last empty row
+                richTextBox1.SelectedText = sb.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
+        }
+
     }
 }

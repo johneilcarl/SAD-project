@@ -13,7 +13,7 @@ using MetroFramework.Forms;
 
 namespace sadProject
 {
-    public partial class Form1 : MetroForm
+    public partial class Form1 : Form
     {
         public Form1()
         {
@@ -23,9 +23,21 @@ namespace sadProject
         private void button1_Click(object sender, EventArgs e)
         {
 
-            string x = textBox1.Text.ToString();
-            string y = textBox2.Text.ToString();
+            string x = username.Text.ToString();
+            string y = password.Text.ToString();
             if (x == "" && y == "")
+            {
+                this.Hide();
+                main ma = new main();
+                ma.Show();
+            }
+            else if(x == "midwife" && y=="midwife")
+            {
+                this.Hide();
+                main ma = new main();
+                ma.Show();
+            }
+            else if (x == "nurse" && y == "nurse")
             {
                 this.Hide();
                 main ma = new main();

@@ -28,7 +28,7 @@ namespace sadProject
 
 
             DataTable requestTable = new DataTable();
-            string requestDisplay = "SELECT r.DateOfRequisition AS Date_of_Requisition, ms.fullName AS Staff_Name, rl.listMed AS List_of__Requested_Medical_Supplies from requisition r LEFT JOIN requisition_line rl ON r.idRequisition = Requisition_idRequisition LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = rl.SupplyID LEFT JOIN medical_staff ms ON ms.StaffID = r.StaffID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY idRequisition DESC;";
+            string requestDisplay = "SELECT r.DateOfRequisition AS Date_of_Requisition, ms.fullName AS Requested_By, rl.listMed AS List_of__Requested_Medical_Supplies from requisition r LEFT JOIN requisition_line rl ON r.idRequisition = Requisition_idRequisition LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = rl.SupplyID LEFT JOIN medical_staff ms ON ms.StaffID = r.StaffID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY idRequisition DESC;";
             MySqlCommand requestCommand = new MySqlCommand(requestDisplay, myconn);
             MySqlDataAdapter da5 = new MySqlDataAdapter(requestCommand);
             da5.Fill(requestTable);
@@ -58,7 +58,7 @@ namespace sadProject
             MySqlConnection myconn = new MySqlConnection(MyConnection2);
 
             DataTable receiveTable = new DataTable();
-            string receiveDisplay = "SELECT rr.DateOfReceive as Date_of_Receive, ms.fullName AS Staff_Name, CONCAT(mn.MedicineName, ',' ,mn.UnitType) AS Medicine, rl.Quantity as Quantity, rl.ExpirationDate as Expiration_Date FROM receiving_report rr LEFT JOIN receiving_line rl ON rl.idReceivingReport = rr.idReceivingReport LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = rl.SupplyID LEFT JOIN medical_staff ms ON ms.StaffID = rr.StaffID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY rr.idReceivingReport DESC;";
+            string receiveDisplay = "SELECT rr.DateOfReceive as Date_of_Receive, ms.fullName AS Received_By, CONCAT(mn.MedicineName, ',' ,mn.UnitType) AS Medicine, rl.Quantity as Quantity, rl.ExpirationDate as Expiration_Date FROM receiving_report rr LEFT JOIN receiving_line rl ON rl.idReceivingReport = rr.idReceivingReport LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = rl.SupplyID LEFT JOIN medical_staff ms ON ms.StaffID = rr.StaffID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY rr.idReceivingReport DESC;";
             //string receiveDisplay = "SELECT rr.DateOfReceive as Date_of_Receive, CONCAT(ms.LastName, ',' ,ms.StaffType) AS Staff, CONCAT(mn.MedicineName, ',' ,mn.UnitType) AS Medicine, SUM(rl.Quantity) as Total_Quantity, rl.ExpirationDate as Expiration_Date FROM receiving_report rr LEFT JOIN receiving_line rl ON rl.idReceivingReport = rr.idReceivingReport LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = rl.SupplyID LEFT JOIN medical_staff ms ON ms.StaffID = rr.StaffID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY rl.SupplyID ORDER BY rl.SupplyID DESC;";
             MySqlCommand receiveCommand = new MySqlCommand(receiveDisplay, myconn);
             MySqlDataAdapter da4 = new MySqlDataAdapter(receiveCommand);
@@ -90,7 +90,7 @@ namespace sadProject
             MySqlConnection myconn = new MySqlConnection(MyConnection2);
 
             DataTable receiveTable = new DataTable();
-            string receiveDisplay = "SELECT rr.DateOfReceive as Date_of_Receive, ms.fullName AS Staff_Name, CONCAT(mn.MedicineName, ',' ,mn.UnitType) AS Medicine, rl.Quantity as Quantity, rl.ExpirationDate as Expiration_Date FROM receiving_report rr LEFT JOIN receiving_line rl ON rl.idReceivingReport = rr.idReceivingReport LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = rl.SupplyID LEFT JOIN medical_staff ms ON ms.StaffID = rr.StaffID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY rr.idReceivingReport ORDER BY rl.SupplyID DESC;";
+            string receiveDisplay = "SELECT rr.DateOfReceive as Date_of_Receive, ms.fullName AS Received_By, CONCAT(mn.MedicineName, ',' ,mn.UnitType) AS Medicine, rl.Quantity as Quantity, rl.ExpirationDate as Expiration_Date FROM receiving_report rr LEFT JOIN receiving_line rl ON rl.idReceivingReport = rr.idReceivingReport LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = rl.SupplyID LEFT JOIN medical_staff ms ON ms.StaffID = rr.StaffID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY rr.idReceivingReport DESC;";
             //with total quantity
             //string receiveDisplay = "SELECT rr.DateOfReceive as Date_of_Receive, CONCAT(ms.LastName, ',' ,ms.StaffType) AS Staff, CONCAT(mn.MedicineName, ',' ,mn.UnitType) AS Medicine, SUM(rl.Quantity) as Total_Quantity, rl.ExpirationDate as Expiration_Date FROM receiving_report rr LEFT JOIN receiving_line rl ON rl.idReceivingReport = rr.idReceivingReport LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = rl.SupplyID LEFT JOIN medical_staff ms ON ms.StaffID = rr.StaffID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY rl.SupplyID ORDER BY rl.SupplyID DESC;";
             MySqlCommand receiveCommand = new MySqlCommand(receiveDisplay, myconn);
@@ -99,7 +99,7 @@ namespace sadProject
             dataGridView1.DataSource = receiveTable;
 
             DataTable requestTable = new DataTable();
-            string requestDisplay = "SELECT r.DateOfRequisition AS Date_of_Requisition, ms.fullName AS Staff_Name, rl.listMed AS List_of__Requested_Medical_Supplies from requisition r LEFT JOIN requisition_line rl ON r.idRequisition = Requisition_idRequisition LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = rl.SupplyID LEFT JOIN medical_staff ms ON ms.StaffID = r.StaffID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY idRequisition DESC;";
+            string requestDisplay = "SELECT r.DateOfRequisition AS Date_of_Requisition, ms.fullName AS Requested_By, rl.listMed AS List_of__Requested_Medical_Supplies from requisition r LEFT JOIN requisition_line rl ON r.idRequisition = Requisition_idRequisition LEFT JOIN medical_supplies_inventory msi ON msi.SupplyID = rl.SupplyID LEFT JOIN medical_staff ms ON ms.StaffID = r.StaffID LEFT JOIN medicine_name mn ON mn.idMedicineName = msi.idMedicineName GROUP BY idRequisition DESC;";
             MySqlCommand requestCommand = new MySqlCommand(requestDisplay, myconn);
             MySqlDataAdapter da5 = new MySqlDataAdapter(requestCommand);
             da5.Fill(requestTable);
@@ -170,7 +170,7 @@ namespace sadProject
                        "');";
 
                 string requisition = "INSERT INTO requisition (StaffID, DateOfRequisition) VALUES ((SELECT StaffID FROM medical_staff ORDER BY StaffID DESC LIMIT 1),'"
-                       + this.dateRequest.Value.ToString("yyyy/MM/dd") +
+                       + this.dateRequest.Value.ToString("yyyy/MM/dd hh:mm") +
                        "');";
 
                 string requisitionLine = "INSERT INTO requisition_line (Requisition_idRequisition, listMed) VALUES ((select idRequisition from requisition order by idRequisition desc limit 1),'"
@@ -190,9 +190,17 @@ namespace sadProject
                         listCom.ExecuteNonQuery();
                     }
                 */
-                if(this.fullName.Text == "" && this.richTextBox1.Text == "")
+                if(this.fullName.Text == "")
                 {
-                    MessageBox.Show("Name and List must not empty when sending a request");
+                    MessageBox.Show("Full Name must not empty","error");
+                }
+                else if(this.richTextBox1.Text == "")
+                {
+                    MessageBox.Show("You must Save All Supply List","error");
+                }
+                else if(this.fullName.Text == "" && this.richTextBox1.Text == "")
+                {
+                    MessageBox.Show("Full Name and List must not be empty.","error");
                 }
                 else
                 {
@@ -213,13 +221,15 @@ namespace sadProject
                         nameCommand.ExecuteReader();
                         reqCommand.ExecuteReader();
                         reqlineCommand.ExecuteReader();
-                        MessageBox.Show("SUCCESSFULLY REQUEST");
+                        MessageBox.Show("SUCCESSFULLY REQUESTED");
                         myConn.Close();
 
                         fullName.Text = "";
                         quantity.Text = "";
                         button6_Click(sender, e);
                         button4_Click(sender, e);
+
+                        loadRequisitionData();
                     }
                     else
                     {
@@ -229,7 +239,7 @@ namespace sadProject
               
 
 
-                loadRequisitionData();
+                
                 
 
                 
@@ -242,6 +252,10 @@ namespace sadProject
             
         }
 
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -256,7 +270,7 @@ namespace sadProject
                 string update_totalQuantity = "UPDATE medical_supplies_inventory SET totalQuantity = (totalQuantity + '" + this.receivedQuantity.Text + "') WHERE SupplyID =" + this.receiveMed.SelectedValue +";";
 
                 string receiving_report = "INSERT INTO receiving_report (StaffID, DateOfReceive) VALUES ((SELECT StaffID FROM medical_staff ORDER BY StaffID DESC LIMIT 1),'"
-                       + this.dateReceive.Value.ToString("yyyy/MM/dd") +
+                       + this.dateReceive.Value.ToString("yyyy/MM/dd hh:mm") +
                        "');";
 
                 string receiving_line = "INSERT INTO receiving_line (idReceivingReport, SupplyID, Quantity, ExpirationDate) VALUES ((SELECT idReceivingReport FROM receiving_report ORDER BY idReceivingReport DESC LIMIT 1),'"
@@ -281,14 +295,39 @@ namespace sadProject
                 MySqlCommand receivedCom = new MySqlCommand(receivedBy, myConn4);
                 myConn4.Open();
 
-                receivedCom.ExecuteReader();
-                reqCommand.ExecuteReader();
-                reqlineCommand.ExecuteReader();
-                updateCom.ExecuteReader();
-                MessageBox.Show("SUCCESSFULLY RECEIVED");
-                myConn.Close();
+                if (this.receivedQuantity.Text == "" && this.receivefullName.Text == "")
+                {
+                    MessageBox.Show("Quantity must not be empty.","error");
+                }
+                else if(this.receivefullName.Text =="")
+                {
+                    MessageBox.Show("Full Name must not be empty.", "error");
+                }
+                else if(this.receivedQuantity.Text == "")
+                {
+                    MessageBox.Show("Quantity and Full Name must not be empty.", "error");
+                }
+                else
+                {
+                    if (MessageBox.Show("Are you sure you want to save?", "?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        receivedCom.ExecuteReader();
+                        reqCommand.ExecuteReader();
+                        reqlineCommand.ExecuteReader();
+                        updateCom.ExecuteReader();
+                        MessageBox.Show("SUCCESSFULLY RECEIVED");
+                        myConn.Close();
 
-                loadReceiveData();
+                        loadReceiveData();
+                    }
+                    else
+                    {
+
+                    }
+                }
+                
+
+                
             }
             catch (Exception ex)
             {
@@ -298,12 +337,12 @@ namespace sadProject
 
 
 
-        //Add supply List
+
         private void button1_Click_1(object sender, EventArgs e)
         {
             if(this.quantity.Text != "")
             {
-                listBox1.Items.Add(this.med_supplies.Text.ToString() + ", \t \t \t" + this.quantity.Text.ToString());
+                listBox1.Items.Add(" | " + this.med_supplies.Text.ToString() + ", \t \t \t" + this.quantity.Text.ToString()+ " | ");
                 this.quantity.Focus();
                 this.quantity.Clear();
             }
@@ -314,7 +353,7 @@ namespace sadProject
             }
             
         }
-        //delete Selected Supply List
+
         private void button3_Click(object sender, EventArgs e)
         {
           if(this.listBox1.SelectedIndex >= 0)
@@ -323,7 +362,7 @@ namespace sadProject
           }
         }
 
-        //select all supply list
+
         private void button3_Click_1(object sender, EventArgs e)
         {
             try
@@ -339,12 +378,12 @@ namespace sadProject
                 MessageBox.Show(ex.Message);
             }
         }
-        //clear supply list
+
         private void button4_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
         }
-        //Save all Supply List
+
         private void button5_Click(object sender, EventArgs e)
         {
             try
@@ -364,10 +403,30 @@ namespace sadProject
                 MessageBox.Show(ex.Message);
             }
         }
-        //clear done supply list
+
         private void button6_Click(object sender, EventArgs e)
         {
             richTextBox1.Clear();
+        }
+
+        private void quantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsNumber(e.KeyChar) && e.KeyChar != (char)32 && e.KeyChar != (char)8;
+        }
+
+        private void receivedQuantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsNumber(e.KeyChar) && e.KeyChar != (char)32 && e.KeyChar != (char)8;
+        }
+
+        private void receivefullName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsLetter(e.KeyChar) && e.KeyChar != (char)32 && e.KeyChar != (char)8 && e.KeyChar != (char)44;
+        }
+
+        private void fullName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsLetter(e.KeyChar) && e.KeyChar != (char)32 && e.KeyChar != (char)8 && e.KeyChar != (char)44;
         }
 
     }

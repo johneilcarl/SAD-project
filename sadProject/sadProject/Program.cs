@@ -16,8 +16,8 @@ namespace sadProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
-            Application.Run(new Orientation_Sched_Planner());
+            Application.Run(new Form1());
+            //Application.Run(new Orientation_Sched_Planner());
         }
     }
 }

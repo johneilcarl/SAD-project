@@ -194,7 +194,7 @@ namespace sadProject
         {
             if (this.firstName.Text != "" && this.lastName.Text != "" && this.middleName.Text != "")
             {
-                listBox1.Items.Add(this.lastName.Text.ToString() + ", " + this.firstName.Text.ToString() + " " + this.middleName.Text.ToString() + ", " + this.gender.SelectedItem.ToString());
+                listBox1.Items.Add(this.lastName.Text.ToString() + ", " + this.firstName.Text.ToString() + " " + this.middleName.Text.ToString() + ", " + this.gender.SelectedItem.ToString() + ", " + this.birthDate.Value.ToString("yyyy/MM/dd"));
             }
             else
             {

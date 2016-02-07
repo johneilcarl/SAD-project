@@ -78,6 +78,9 @@ namespace sadProject
             dataAdapter1.Fill(listofParticipants);
             dataGridView1.DataSource = listofParticipants;
 
+            int totalpart = dataGridView1.Rows.Count - 1;
+            this.totalparticipants.Text = totalpart.ToString();
+
         }
         private void viewSchedule_Load(object sender, EventArgs e)
         {
@@ -101,7 +104,7 @@ namespace sadProject
         {
             if (this.firstName.Text != "" && this.lastName.Text != "" && this.middleName.Text != "")
             {
-                listBox1.Items.Add(this.lastName.Text.ToString() + ", " + this.firstName.Text.ToString() + " " + this.middleName.Text.ToString());
+                listBox1.Items.Add(this.lastName.Text.ToString() + ", " + this.firstName.Text.ToString() + " " + this.middleName.Text.ToString() + ", " + this.gender.SelectedItem.ToString() + ", " + this.birthDate.Value.ToString("yyyy/MM/dd"));
             }
             else
             {

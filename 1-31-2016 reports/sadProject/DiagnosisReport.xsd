@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DiagnosisReport" targetNamespace="http://tempuri.org/DiagnosisReport.xsd" xmlns:mstns="http://tempuri.org/DiagnosisReport.xsd" xmlns="http://tempuri.org/DiagnosisReport.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="healthcenterConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="healthcenterConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.sadProject.Properties.Settings.GlobalReference.Default.healthcenterConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="checkupTableAdapter" GeneratorDataComponentClassName="checkupTableAdapter" Name="checkup" UserDataComponentName="checkupTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="healthcenterConnectionString (Settings)" DbObjectName="healthcenter.checkup" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `PatientID`, `Complaint`, `Treatment`, `DateOfCheckUp`, `CheckUpType`, `Weight`, `Height`, `BloodPressure`, `Medication` FROM `checkup`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="PatientID" DataSetColumn="PatientID" />
+              <Mapping SourceColumn="Complaint" DataSetColumn="Complaint" />
+              <Mapping SourceColumn="Treatment" DataSetColumn="Treatment" />
+              <Mapping SourceColumn="DateOfCheckUp" DataSetColumn="DateOfCheckUp" />
+              <Mapping SourceColumn="CheckUpType" DataSetColumn="CheckUpType" />
+              <Mapping SourceColumn="Weight" DataSetColumn="Weight" />
+              <Mapping SourceColumn="Height" DataSetColumn="Height" />
+              <Mapping SourceColumn="BloodPressure" DataSetColumn="BloodPressure" />
+              <Mapping SourceColumn="Medication" DataSetColumn="Medication" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DiagnosisReport" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DiagnosisReport" msprop:Generator_UserDSName="DiagnosisReport">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="checkup" msprop:Generator_TableClassName="checkupDataTable" msprop:Generator_TableVarName="tablecheckup" msprop:Generator_TablePropName="checkup" msprop:Generator_RowDeletingName="checkupRowDeleting" msprop:Generator_RowChangingName="checkupRowChanging" msprop:Generator_RowEvHandlerName="checkupRowChangeEventHandler" msprop:Generator_RowDeletedName="checkupRowDeleted" msprop:Generator_UserTableName="checkup" msprop:Generator_RowChangedName="checkupRowChanged" msprop:Generator_RowEvArgName="checkupRowChangeEvent" msprop:Generator_RowClassName="checkupRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PatientID" msprop:Generator_ColumnVarNameInTable="columnPatientID" msprop:Generator_ColumnPropNameInRow="PatientID" msprop:Generator_ColumnPropNameInTable="PatientIDColumn" msprop:Generator_UserColumnName="PatientID" type="xs:int" />
+              <xs:element name="Complaint" msprop:Generator_ColumnVarNameInTable="columnComplaint" msprop:Generator_ColumnPropNameInRow="Complaint" msprop:Generator_ColumnPropNameInTable="ComplaintColumn" msprop:Generator_UserColumnName="Complaint" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Treatment" msprop:Generator_ColumnVarNameInTable="columnTreatment" msprop:Generator_ColumnPropNameInRow="Treatment" msprop:Generator_ColumnPropNameInTable="TreatmentColumn" msprop:Generator_UserColumnName="Treatment" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DateOfCheckUp" msprop:Generator_ColumnVarNameInTable="columnDateOfCheckUp" msprop:Generator_ColumnPropNameInRow="DateOfCheckUp" msprop:Generator_ColumnPropNameInTable="DateOfCheckUpColumn" msprop:Generator_UserColumnName="DateOfCheckUp" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CheckUpType" msprop:Generator_ColumnVarNameInTable="columnCheckUpType" msprop:Generator_ColumnPropNameInRow="CheckUpType" msprop:Generator_ColumnPropNameInTable="CheckUpTypeColumn" msprop:Generator_UserColumnName="CheckUpType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Weight" msprop:Generator_ColumnVarNameInTable="columnWeight" msprop:Generator_ColumnPropNameInRow="Weight" msprop:Generator_ColumnPropNameInTable="WeightColumn" msprop:Generator_UserColumnName="Weight" type="xs:int" minOccurs="0" />
+              <xs:element name="Height" msprop:Generator_ColumnVarNameInTable="columnHeight" msprop:Generator_ColumnPropNameInRow="Height" msprop:Generator_ColumnPropNameInTable="HeightColumn" msprop:Generator_UserColumnName="Height" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BloodPressure" msprop:Generator_ColumnVarNameInTable="columnBloodPressure" msprop:Generator_ColumnPropNameInRow="BloodPressure" msprop:Generator_ColumnPropNameInTable="BloodPressureColumn" msprop:Generator_UserColumnName="BloodPressure" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Medication" msprop:Generator_ColumnVarNameInTable="columnMedication" msprop:Generator_ColumnPropNameInRow="Medication" msprop:Generator_ColumnPropNameInTable="MedicationColumn" msprop:Generator_UserColumnName="Medication" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

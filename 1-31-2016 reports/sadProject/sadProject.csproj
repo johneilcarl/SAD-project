@@ -1,0 +1,592 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{70554B0F-C287-43B7-A21C-F2CE09502D20}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>sadProject</RootNamespace>
+    <AssemblyName>sadProject</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MetroFramework">
+      <HintPath>..\packages\MetroModernUI.1.3.5.0\lib\net45\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\packages\MetroModernUI.1.3.5.0\lib\net45\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\packages\MetroModernUI.1.3.5.0\lib\net45\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.5.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MySQL\Connector NET 6.5.4\Assemblies\v4.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Web, Version=6.5.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MySQL\Connector NET 6.5.4\Assemblies\v4.0\MySql.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="displayList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="displayList.Designer.cs">
+      <DependentUpon>displayList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="createnewOrientation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="createnewOrientation.Designer.cs">
+      <DependentUpon>createnewOrientation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="createpatientform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="createpatientform.Designer.cs">
+      <DependentUpon>createpatientform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="createPrescription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="createPrescription.Designer.cs">
+      <DependentUpon>createPrescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiagnosisReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DiagnosisReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DisposeMed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisposeMed.Designer.cs">
+      <DependentUpon>DisposeMed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="distributeMeds.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="distributeMeds.Designer.cs">
+      <DependentUpon>distributeMeds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editPMR_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editPMR_Form.Designer.cs">
+      <DependentUpon>editPMR_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="healthcenterDataSet1.cs">
+      <DependentUpon>healthcenterDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="healthcenterDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>healthcenterDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="healthcenterDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>healthcenterDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="healthcenterDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>healthcenterDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="healthcenterDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>healthcenterDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="healthcenterDataSet6.cs">
+      <DependentUpon>healthcenterDataSet6.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="healthcenterDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>healthcenterDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="healthcenterDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>healthcenterDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="healthcenterDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>healthcenterDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="healthcenterDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>healthcenterDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="orientationReport.cs">
+      <DependentUpon>orientationReport.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="orientationReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>orientationReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="patientDiagnosisReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="patientDiagnosisReport.Designer.cs">
+      <DependentUpon>patientDiagnosisReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="healthcenterDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>healthcenterDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="healthcenterDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>healthcenterDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="healthcenterDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>healthcenterDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MedicalSuppliesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MedicalSuppliesReport.Designer.cs">
+      <DependentUpon>MedicalSuppliesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrientationDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrientationDetails.Designer.cs">
+      <DependentUpon>OrientationDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inventorySubReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inventorySubReport.Designer.cs">
+      <DependentUpon>inventorySubReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventorySubsystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventorySubsystem.Designer.cs">
+      <DependentUpon>InventorySubsystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main.Designer.cs">
+      <DependentUpon>main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MCInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MCInventory.Designer.cs">
+      <DependentUpon>MCInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="medicalSuppliesInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="medicalSuppliesInventory.Designer.cs">
+      <DependentUpon>medicalSuppliesInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="monthlyReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="monthlyReport.Designer.cs">
+      <DependentUpon>monthlyReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mothersClassReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mothersClassReport.Designer.cs">
+      <DependentUpon>mothersClassReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PMSboxes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PMSboxes.Designer.cs">
+      <DependentUpon>PMSboxes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RECIEVINGREPORT.cs">
+      <DependentUpon>RECIEVINGREPORT.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RECIEVINGREPORT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RECIEVINGREPORT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="recordPatDiagnosis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="recordPatDiagnosis.Designer.cs">
+      <DependentUpon>recordPatDiagnosis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Referral_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Referral_Form.Designer.cs">
+      <DependentUpon>Referral_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="searchMedicalSupplies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="searchMedicalSupplies.Designer.cs">
+      <DependentUpon>searchMedicalSupplies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="searchpatientform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="searchpatientform.Designer.cs">
+      <DependentUpon>searchpatientform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="updateOrientationSched.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="updateOrientationSched.Designer.cs">
+      <DependentUpon>updateOrientationSched.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewForm.Designer.cs">
+      <DependentUpon>ViewForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="displayList.resx">
+      <DependentUpon>displayList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="createnewOrientation.resx">
+      <DependentUpon>createnewOrientation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="createpatientform.resx">
+      <DependentUpon>createpatientform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="createPrescription.resx">
+      <DependentUpon>createPrescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisposeMed.resx">
+      <DependentUpon>DisposeMed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="distributeMeds.resx">
+      <DependentUpon>distributeMeds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editPMR_Form.resx">
+      <DependentUpon>editPMR_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="patientDiagnosisReport.resx">
+      <DependentUpon>patientDiagnosisReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MedicalSuppliesReport.resx">
+      <DependentUpon>MedicalSuppliesReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrientationDetails.resx">
+      <DependentUpon>OrientationDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inventorySubReport.resx">
+      <DependentUpon>inventorySubReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventorySubsystem.resx">
+      <DependentUpon>InventorySubsystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main.resx">
+      <DependentUpon>main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MCInventory.resx">
+      <DependentUpon>MCInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="medicalSuppliesInventory.resx">
+      <DependentUpon>medicalSuppliesInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="monthlyReport.resx">
+      <DependentUpon>monthlyReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mothersClassReport.resx">
+      <DependentUpon>mothersClassReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PMSboxes.resx">
+      <DependentUpon>PMSboxes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="recordPatDiagnosis.resx">
+      <DependentUpon>recordPatDiagnosis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Referral_Form.resx">
+      <DependentUpon>Referral_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report10.rdlc" />
+    <EmbeddedResource Include="Report11.rdlc" />
+    <EmbeddedResource Include="Report8.rdlc" />
+    <EmbeddedResource Include="Request Report.rdlc" />
+    <EmbeddedResource Include="ISSUANCE REPORT.rdlc" />
+    <EmbeddedResource Include="Report13.rdlc" />
+    <EmbeddedResource Include="Report14.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="Report4.rdlc" />
+    <EmbeddedResource Include="Report5.rdlc" />
+    <EmbeddedResource Include="Report6.rdlc" />
+    <EmbeddedResource Include="Report7.rdlc" />
+    <EmbeddedResource Include="Recieved Report.rdlc" />
+    <EmbeddedResource Include="Report9.rdlc" />
+    <EmbeddedResource Include="searchMedicalSupplies.resx">
+      <DependentUpon>searchMedicalSupplies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="searchpatientform.resx">
+      <DependentUpon>searchpatientform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="updateOrientationSched.resx">
+      <DependentUpon>updateOrientationSched.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewForm.resx">
+      <DependentUpon>ViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DiagnosisReport.xsc">
+      <DependentUpon>DiagnosisReport.xsd</DependentUpon>
+    </None>
+    <None Include="DiagnosisReport.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DiagnosisReport.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DiagnosisReport.xss">
+      <DependentUpon>DiagnosisReport.xsd</DependentUpon>
+    </None>
+    <None Include="healthcenterDataSet.xsc">
+      <DependentUpon>healthcenterDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="healthcenterDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>healthcenterDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="healthcenterDataSet.xss">
+      <DependentUpon>healthcenterDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="healthcenterDataSet1.xsc">
+      <DependentUpon>healthcenterDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="healthcenterDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>healthcenterDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="healthcenterDataSet1.xss">
+      <DependentUpon>healthcenterDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="healthcenterDataSet10.xsc">
+      <DependentUpon>healthcenterDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="healthcenterDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>healthcenterDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="healthcenterDataSet10.xss">
+      <DependentUpon>healthcenterDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="healthcenterDataSet2.xsc">
+      <DependentUpon>healthcenterDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="healthcenterDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>healthcenterDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="healthcenterDataSet2.xss">
+      <DependentUpon>healthcenterDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="healthcenterDataSet3.xsc">
+      <DependentUpon>healthcenterDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="healthcenterDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>healthcenterDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="healthcenterDataSet3.xss">
+      <DependentUpon>healthcenterDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="healthcenterDataSet4.xsc">
+      <DependentUpon>healthcenterDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="healthcenterDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>healthcenterDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="healthcenterDataSet4.xss">
+      <DependentUpon>healthcenterDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="healthcenterDataSet5.xsc">
+      <DependentUpon>healthcenterDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="healthcenterDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>healthcenterDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="healthcenterDataSet5.xss">
+      <DependentUpon>healthcenterDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="healthcenterDataSet6.xsc">
+      <DependentUpon>healthcenterDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="healthcenterDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>healthcenterDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="healthcenterDataSet6.xss">
+      <DependentUpon>healthcenterDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="healthcenterDataSet7.xsc">
+      <DependentUpon>healthcenterDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="healthcenterDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>healthcenterDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="healthcenterDataSet7.xss">
+      <DependentUpon>healthcenterDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="healthcenterDataSet8.xsc">
+      <DependentUpon>healthcenterDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="healthcenterDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>healthcenterDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="healthcenterDataSet8.xss">
+      <DependentUpon>healthcenterDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="healthcenterDataSet9.xsc">
+      <DependentUpon>healthcenterDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="healthcenterDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>healthcenterDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="healthcenterDataSet9.xss">
+      <DependentUpon>healthcenterDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="orientationReport.xsc">
+      <DependentUpon>orientationReport.xsd</DependentUpon>
+    </None>
+    <None Include="orientationReport.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>orientationReport.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="orientationReport.xss">
+      <DependentUpon>orientationReport.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="RECIEVINGREPORT.xsc">
+      <DependentUpon>RECIEVINGREPORT.xsd</DependentUpon>
+    </None>
+    <None Include="RECIEVINGREPORT.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RECIEVINGREPORT.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RECIEVINGREPORT.xss">
+      <DependentUpon>RECIEVINGREPORT.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

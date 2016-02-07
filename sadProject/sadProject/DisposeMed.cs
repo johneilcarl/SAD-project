@@ -154,5 +154,10 @@ namespace sadProject
                 toolTip1.SetToolTip(button2, "Stock out all Expired Medical Supplies");
         }
 
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
+
     }
 }

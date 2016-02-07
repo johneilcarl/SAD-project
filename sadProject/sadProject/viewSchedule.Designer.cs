@@ -36,15 +36,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.birthDate = new MetroFramework.Controls.MetroDateTime();
-            this.gender = new MetroFramework.Controls.MetroComboBox();
-            this.middleName = new MetroFramework.Controls.MetroTextBox();
-            this.lastName = new MetroFramework.Controls.MetroTextBox();
-            this.firstName = new MetroFramework.Controls.MetroTextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
@@ -57,8 +48,25 @@
             this.editTime1 = new MetroFramework.Controls.MetroTextBox();
             this.editTime2 = new MetroFramework.Controls.MetroTextBox();
             this.editDate2 = new MetroFramework.Controls.MetroDateTime();
+            this.button4 = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.birthDate = new MetroFramework.Controls.MetroDateTime();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.firstName = new MetroFramework.Controls.MetroTextBox();
+            this.lastName = new MetroFramework.Controls.MetroTextBox();
+            this.gender = new MetroFramework.Controls.MetroComboBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.middleName = new MetroFramework.Controls.MetroTextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.patient_name = new System.Windows.Forms.ComboBox();
+            this.button9 = new System.Windows.Forms.Button();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // date
@@ -138,170 +146,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.birthDate);
-            this.panel1.Controls.Add(this.gender);
-            this.panel1.Controls.Add(this.middleName);
-            this.panel1.Controls.Add(this.lastName);
-            this.panel1.Controls.Add(this.firstName);
-            this.panel1.Controls.Add(this.listBox1);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Location = new System.Drawing.Point(27, 254);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(690, 305);
-            this.panel1.TabIndex = 10;
-            this.panel1.Visible = false;
-            // 
-            // birthDate
-            // 
-            this.birthDate.Location = new System.Drawing.Point(55, 172);
-            this.birthDate.MinimumSize = new System.Drawing.Size(0, 29);
-            this.birthDate.Name = "birthDate";
-            this.birthDate.Size = new System.Drawing.Size(289, 29);
-            this.birthDate.TabIndex = 62;
-            // 
-            // gender
-            // 
-            this.gender.FormattingEnabled = true;
-            this.gender.ItemHeight = 23;
-            this.gender.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.gender.Location = new System.Drawing.Point(55, 137);
-            this.gender.Name = "gender";
-            this.gender.Size = new System.Drawing.Size(289, 29);
-            this.gender.TabIndex = 61;
-            this.gender.UseSelectable = true;
-            // 
-            // middleName
-            // 
-            // 
-            // 
-            // 
-            this.middleName.CustomButton.Image = null;
-            this.middleName.CustomButton.Location = new System.Drawing.Point(261, 2);
-            this.middleName.CustomButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.middleName.CustomButton.Name = "";
-            this.middleName.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.middleName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.middleName.CustomButton.TabIndex = 1;
-            this.middleName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.middleName.CustomButton.UseSelectable = true;
-            this.middleName.CustomButton.Visible = false;
-            this.middleName.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.middleName.Lines = new string[0];
-            this.middleName.Location = new System.Drawing.Point(55, 100);
-            this.middleName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.middleName.MaxLength = 32767;
-            this.middleName.Name = "middleName";
-            this.middleName.PasswordChar = '\0';
-            this.middleName.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.middleName.SelectedText = "";
-            this.middleName.SelectionLength = 0;
-            this.middleName.SelectionStart = 0;
-            this.middleName.Size = new System.Drawing.Size(289, 30);
-            this.middleName.TabIndex = 60;
-            this.middleName.UseSelectable = true;
-            this.middleName.WaterMark = "MiddleName";
-            this.middleName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.middleName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // lastName
-            // 
-            // 
-            // 
-            // 
-            this.lastName.CustomButton.Image = null;
-            this.lastName.CustomButton.Location = new System.Drawing.Point(261, 2);
-            this.lastName.CustomButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.lastName.CustomButton.Name = "";
-            this.lastName.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.lastName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.lastName.CustomButton.TabIndex = 1;
-            this.lastName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.lastName.CustomButton.UseSelectable = true;
-            this.lastName.CustomButton.Visible = false;
-            this.lastName.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.lastName.Lines = new string[0];
-            this.lastName.Location = new System.Drawing.Point(55, 62);
-            this.lastName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.lastName.MaxLength = 32767;
-            this.lastName.Name = "lastName";
-            this.lastName.PasswordChar = '\0';
-            this.lastName.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.lastName.SelectedText = "";
-            this.lastName.SelectionLength = 0;
-            this.lastName.SelectionStart = 0;
-            this.lastName.Size = new System.Drawing.Size(289, 30);
-            this.lastName.TabIndex = 59;
-            this.lastName.UseSelectable = true;
-            this.lastName.WaterMark = "LastName";
-            this.lastName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.lastName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // firstName
-            // 
-            // 
-            // 
-            // 
-            this.firstName.CustomButton.Image = null;
-            this.firstName.CustomButton.Location = new System.Drawing.Point(261, 2);
-            this.firstName.CustomButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.firstName.CustomButton.Name = "";
-            this.firstName.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.firstName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.firstName.CustomButton.TabIndex = 1;
-            this.firstName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.firstName.CustomButton.UseSelectable = true;
-            this.firstName.CustomButton.Visible = false;
-            this.firstName.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.firstName.Lines = new string[0];
-            this.firstName.Location = new System.Drawing.Point(55, 24);
-            this.firstName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.firstName.MaxLength = 32767;
-            this.firstName.Name = "firstName";
-            this.firstName.PasswordChar = '\0';
-            this.firstName.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.firstName.SelectedText = "";
-            this.firstName.SelectionLength = 0;
-            this.firstName.SelectionStart = 0;
-            this.firstName.Size = new System.Drawing.Size(289, 30);
-            this.firstName.TabIndex = 58;
-            this.firstName.UseSelectable = true;
-            this.firstName.WaterMark = "FirstName";
-            this.firstName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.firstName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(406, 7);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(281, 277);
-            this.listBox1.TabIndex = 10;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(198, 232);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(106, 52);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "cancel";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(86, 232);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(106, 52);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "add";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(708, 3);
@@ -352,7 +196,7 @@
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel3.Location = new System.Drawing.Point(387, 80);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(23, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(22, 19);
             this.metroLabel3.TabIndex = 16;
             this.metroLabel3.Text = "to";
             // 
@@ -477,12 +321,232 @@
             this.editDate2.Visible = false;
             this.editDate2.ValueChanged += new System.EventHandler(this.editDate2_ValueChanged);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(147, 237);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(89, 28);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "cancel";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(27, 254);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(690, 305);
+            this.tabControl1.TabIndex = 73;
+            this.tabControl1.Visible = false;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.birthDate);
+            this.tabPage1.Controls.Add(this.listBox1);
+            this.tabPage1.Controls.Add(this.firstName);
+            this.tabPage1.Controls.Add(this.lastName);
+            this.tabPage1.Controls.Add(this.gender);
+            this.tabPage1.Controls.Add(this.button3);
+            this.tabPage1.Controls.Add(this.middleName);
+            this.tabPage1.Controls.Add(this.button4);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(682, 279);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "New Participants";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // birthDate
+            // 
+            this.birthDate.Location = new System.Drawing.Point(6, 202);
+            this.birthDate.MinimumSize = new System.Drawing.Size(0, 29);
+            this.birthDate.Name = "birthDate";
+            this.birthDate.Size = new System.Drawing.Size(289, 29);
+            this.birthDate.TabIndex = 67;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(337, 8);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(323, 264);
+            this.listBox1.TabIndex = 10;
+            // 
+            // firstName
+            // 
+            // 
+            // 
+            // 
+            this.firstName.CustomButton.Image = null;
+            this.firstName.CustomButton.Location = new System.Drawing.Point(261, 2);
+            this.firstName.CustomButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.firstName.CustomButton.Name = "";
+            this.firstName.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.firstName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.firstName.CustomButton.TabIndex = 1;
+            this.firstName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.firstName.CustomButton.UseSelectable = true;
+            this.firstName.CustomButton.Visible = false;
+            this.firstName.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.firstName.Lines = new string[0];
+            this.firstName.Location = new System.Drawing.Point(6, 19);
+            this.firstName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.firstName.MaxLength = 32767;
+            this.firstName.Name = "firstName";
+            this.firstName.PasswordChar = '\0';
+            this.firstName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.firstName.SelectedText = "";
+            this.firstName.SelectionLength = 0;
+            this.firstName.SelectionStart = 0;
+            this.firstName.Size = new System.Drawing.Size(289, 30);
+            this.firstName.TabIndex = 63;
+            this.firstName.UseSelectable = true;
+            this.firstName.WaterMark = "FirstName";
+            this.firstName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.firstName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // lastName
+            // 
+            // 
+            // 
+            // 
+            this.lastName.CustomButton.Image = null;
+            this.lastName.CustomButton.Location = new System.Drawing.Point(261, 2);
+            this.lastName.CustomButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lastName.CustomButton.Name = "";
+            this.lastName.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.lastName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.lastName.CustomButton.TabIndex = 1;
+            this.lastName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.lastName.CustomButton.UseSelectable = true;
+            this.lastName.CustomButton.Visible = false;
+            this.lastName.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.lastName.Lines = new string[0];
+            this.lastName.Location = new System.Drawing.Point(6, 110);
+            this.lastName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lastName.MaxLength = 32767;
+            this.lastName.Name = "lastName";
+            this.lastName.PasswordChar = '\0';
+            this.lastName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.lastName.SelectedText = "";
+            this.lastName.SelectionLength = 0;
+            this.lastName.SelectionStart = 0;
+            this.lastName.Size = new System.Drawing.Size(289, 30);
+            this.lastName.TabIndex = 64;
+            this.lastName.UseSelectable = true;
+            this.lastName.WaterMark = "LastName";
+            this.lastName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.lastName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // gender
+            // 
+            this.gender.FormattingEnabled = true;
+            this.gender.ItemHeight = 23;
+            this.gender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.gender.Location = new System.Drawing.Point(6, 157);
+            this.gender.Name = "gender";
+            this.gender.Size = new System.Drawing.Size(289, 29);
+            this.gender.TabIndex = 66;
+            this.gender.UseSelectable = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(49, 237);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(89, 28);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "add";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // middleName
+            // 
+            // 
+            // 
+            // 
+            this.middleName.CustomButton.Image = null;
+            this.middleName.CustomButton.Location = new System.Drawing.Point(261, 2);
+            this.middleName.CustomButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.middleName.CustomButton.Name = "";
+            this.middleName.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.middleName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.middleName.CustomButton.TabIndex = 1;
+            this.middleName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.middleName.CustomButton.UseSelectable = true;
+            this.middleName.CustomButton.Visible = false;
+            this.middleName.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.middleName.Lines = new string[0];
+            this.middleName.Location = new System.Drawing.Point(6, 66);
+            this.middleName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.middleName.MaxLength = 32767;
+            this.middleName.Name = "middleName";
+            this.middleName.PasswordChar = '\0';
+            this.middleName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.middleName.SelectedText = "";
+            this.middleName.SelectionLength = 0;
+            this.middleName.SelectionStart = 0;
+            this.middleName.Size = new System.Drawing.Size(289, 30);
+            this.middleName.TabIndex = 65;
+            this.middleName.UseSelectable = true;
+            this.middleName.WaterMark = "MiddleName";
+            this.middleName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.middleName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.patient_name);
+            this.tabPage2.Controls.Add(this.button9);
+            this.tabPage2.Controls.Add(this.dataGridView3);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(682, 279);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Patient as Participants";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // patient_name
+            // 
+            this.patient_name.Font = new System.Drawing.Font("Segoe UI Symbol", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patient_name.FormattingEnabled = true;
+            this.patient_name.Location = new System.Drawing.Point(179, 15);
+            this.patient_name.Name = "patient_name";
+            this.patient_name.Size = new System.Drawing.Size(229, 29);
+            this.patient_name.TabIndex = 69;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(414, 15);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(75, 29);
+            this.button9.TabIndex = 68;
+            this.button9.Text = "search";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(6, 50);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(670, 223);
+            this.dataGridView3.TabIndex = 0;
+            this.dataGridView3.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellDoubleClick);
+            // 
             // viewSchedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(740, 571);
             this.ControlBox = false;
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.editDate2);
             this.Controls.Add(this.editTime2);
             this.Controls.Add(this.editTime1);
@@ -495,7 +559,6 @@
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.dataGridView1);
@@ -512,7 +575,10 @@
             this.Text = "viewSchedule";
             this.Load += new System.EventHandler(this.viewSchedule_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -528,20 +594,11 @@
         public System.Windows.Forms.DataGridView dataGridView1;
         public System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroDateTime birthDate;
-        private MetroFramework.Controls.MetroComboBox gender;
-        private MetroFramework.Controls.MetroTextBox middleName;
-        private MetroFramework.Controls.MetroTextBox lastName;
-        private MetroFramework.Controls.MetroTextBox firstName;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
@@ -549,6 +606,20 @@
         public MetroFramework.Controls.MetroTextBox editTime1;
         public MetroFramework.Controls.MetroTextBox editTime2;
         public MetroFramework.Controls.MetroDateTime editDate2;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private MetroFramework.Controls.MetroDateTime birthDate;
+        private System.Windows.Forms.ListBox listBox1;
+        private MetroFramework.Controls.MetroTextBox firstName;
+        private MetroFramework.Controls.MetroTextBox lastName;
+        private MetroFramework.Controls.MetroComboBox gender;
+        private System.Windows.Forms.Button button3;
+        private MetroFramework.Controls.MetroTextBox middleName;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ComboBox patient_name;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.DataGridView dataGridView3;
 
     }
 }

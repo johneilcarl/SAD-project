@@ -33,17 +33,17 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.displayExpiry = new System.Windows.Forms.DataGridView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.button2 = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.displayExpiry = new System.Windows.Forms.DataGridView();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.displayExpiry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.displayExpiry)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -92,6 +92,16 @@
             this.tabPage1.Text = "Incoming Expiry";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // displayExpiry
+            // 
+            this.displayExpiry.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.displayExpiry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.displayExpiry.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.displayExpiry.Location = new System.Drawing.Point(3, 4);
+            this.displayExpiry.Name = "displayExpiry";
+            this.displayExpiry.Size = new System.Drawing.Size(866, 494);
+            this.displayExpiry.TabIndex = 0;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -125,15 +135,9 @@
             this.button2.Click += new System.EventHandler(this.button2_Click);
             this.button2.MouseHover += new System.EventHandler(this.button2_MouseHover);
             // 
-            // displayExpiry
+            // toolTip1
             // 
-            this.displayExpiry.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.displayExpiry.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.displayExpiry.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.displayExpiry.Location = new System.Drawing.Point(3, 4);
-            this.displayExpiry.Name = "displayExpiry";
-            this.displayExpiry.Size = new System.Drawing.Size(866, 494);
-            this.displayExpiry.TabIndex = 0;
+            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
             // 
             // DisposeMed
             // 
@@ -157,9 +161,9 @@
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.displayExpiry)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.displayExpiry)).EndInit();
             this.ResumeLayout(false);
 
         }
